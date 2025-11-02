@@ -2796,5 +2796,427 @@
       ],
       "correct_answer": 0
     }
+  ],
+  "math_3": [
+    {
+      "question": {
+        "en": "What is the square root of 1?",
+        "el": "Ποια είναι η τετραγωνική ρίζα του 1;",
+        "de": "Was ist die Quadratwurzel von 1?"
+      },
+      "answers": [
+        "1",
+        "0",
+        "2",
+        "4"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is the square root of 4?",
+        "el": "Ποια είναι η τετραγωνική ρίζα του 4;",
+        "de": "Was ist die Quadratwurzel von 4?"
+      },
+      "answers": [
+        "2",
+        "1",
+        "3",
+        "4"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is the square root of 9?",
+        "el": "Ποια είναι η τετραγωνική ρίζα του 9;",
+        "de": "Was ist die Quadratwurzel von 9?"
+      },
+      "answers": [
+        "3",
+        "2",
+        "4",
+        "5"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is the square root of 16?",
+        "el": "Ποια είναι η τετραγωνική ρίζα του 16;",
+        "de": "Was ist die Quadratwurzel von 16?"
+      },
+      "answers": [
+        "4",
+        "3",
+        "5",
+        "6"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is the square root of 25?",
+        "el": "Ποια είναι η τετραγωνική ρίζα του 25;",
+        "de": "Was ist die Quadratwurzel von 25?"
+      },
+      "answers": [
+        "5",
+        "4",
+        "6",
+        "7"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is the square root of 36?",
+        "el": "Ποια είναι η τετραγωνική ρίζα του 36;",
+        "de": "Was ist die Quadratwurzel von 36?"
+      },
+      "answers": [
+        "6",
+        "5",
+        "7",
+        "8"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is the square root of 49?",
+        "el": "Ποια είναι η τετραγωνική ρίζα του 49;",
+        "de": "Was ist die Quadratwurzel von 49?"
+      },
+      "answers": [
+        "7",
+        "6",
+        "8",
+        "9"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is the square root of 64?",
+        "el": "Ποια είναι η τετραγωνική ρίζα του 64;",
+        "de": "Was ist die Quadratwurzel von 64?"
+      },
+      "answers": [
+        "8",
+        "7",
+        "9",
+        "10"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is the square root of 81?",
+        "el": "Ποια είναι η τετραγωνική ρίζα του 81;",
+        "de": "Was ist die Quadratwurzel von 81?"
+      },
+      "answers": [
+        "9",
+        "8",
+        "10",
+        "11"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is the square root of 100?",
+        "el": "Ποια είναι η τετραγωνική ρίζα του 100;",
+        "de": "Was ist die Quadratwurzel von 100?"
+      },
+      "answers": [
+        "10",
+        "9",
+        "11",
+        "12"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is the square root of 121?",
+        "el": "Ποια είναι η τετραγωνική ρίζα του 121;",
+        "de": "Was ist die Quadratwurzel von 121?"
+      },
+      "answers": [
+        "11",
+        "10",
+        "12",
+        "13"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is the square root of 144?",
+        "el": "Ποια είναι η τετραγωνική ρίζα του 144;",
+        "de": "Was ist die Quadratwurzel von 144?"
+      },
+      "answers": [
+        "12",
+        "11",
+        "13",
+        "14"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is the square root of 169?",
+        "el": "Ποια είναι η τετραγωνική ρίζα του 169;",
+        "de": "Was ist die Quadratwurzel von 169?"
+      },
+      "answers": [
+        "13",
+        "12",
+        "14",
+        "15"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is the square root of 196?",
+        "el": "Ποια είναι η τετραγωνική ρίζα του 196;",
+        "de": "Was ist die Quadratwurzel von 196?"
+      },
+      "answers": [
+        "14",
+        "13",
+        "15",
+        "16"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is the square root of 225?",
+        "el": "Ποια είναι η τετραγωνική ρίζα του 225;",
+        "de": "Was ist die Quadratwurzel von 225?"
+      },
+      "answers": [
+        "15",
+        "14",
+        "16",
+        "17"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is the square root of 400?",
+        "el": "Ποια είναι η τετραγωνική ρίζα του 400;",
+        "de": "Was ist die Quadratwurzel von 400?"
+      },
+      "answers": [
+        "20",
+        "19",
+        "21",
+        "22"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is the square root of 900?",
+        "el": "Ποια είναι η τετραγωνική ρίζα του 900;",
+        "de": "Was ist die Quadratwurzel von 900?"
+      },
+      "answers": [
+        "30",
+        "29",
+        "31",
+        "32"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is the square root of 1600?",
+        "el": "Ποια είναι η τετραγωνική ρίζα του 1600;",
+        "de": "Was ist die Quadratwurzel von 1600?"
+      },
+      "answers": [
+        "40",
+        "39",
+        "41",
+        "42"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is the square root of 2500?",
+        "el": "Ποια είναι η τετραγωνική ρίζα του 2500;",
+        "de": "Was ist die Quadratwurzel von 2500?"
+      },
+      "answers": [
+        "50",
+        "49",
+        "51",
+        "52"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "How many sides does a triangle have?",
+        "el": "Πόσες πλευρές έχει ένα τρίγωνο;",
+        "de": "Wie viele Seiten hat ein Dreieck?"
+      },
+      "answers": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "How many corners does a triangle have?",
+        "el": "Πόσες γωνίες έχει ένα τρίγωνο;",
+        "de": "Wie viele Ecken hat ein Dreieck?"
+      },
+      "answers": [
+        "3",
+        "4",
+        "2",
+        "5"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "How many sides does a square have?",
+        "el": "Πόσες πλευρές έχει ένα τετράγωνο;",
+        "de": "Wie viele Seiten hat ein Quadrat?"
+      },
+      "answers": [
+        "4",
+        "3",
+        "5",
+        "6"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "How many corners does a square have?",
+        "el": "Πόσες γωνίες έχει ένα τετράγωνο;",
+        "de": "Wie viele Ecken hat ein Quadrat?"
+      },
+      "answers": [
+        "4",
+        "3",
+        "5",
+        "6"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "How many sides does a hexagon have?",
+        "el": "Πόσες πλευρές έχει ένα εξάγωνο;",
+        "de": "Wie viele Seiten hat ein Sechseck?"
+      },
+      "answers": [
+        "6",
+        "5",
+        "7",
+        "8"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "How many corners does a hexagon have?",
+        "el": "Πόσες γωνίες έχει ένα εξάγωνο;",
+        "de": "Wie viele Ecken hat ein Sechseck?"
+      },
+      "answers": [
+        "6",
+        "5",
+        "7",
+        "8"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "How many sides does a circle have?",
+        "el": "Πόσες πλευρές έχει ένας κύκλος;",
+        "de": "Wie viele Seiten hat ein Kreis?"
+      },
+      "answers": [
+        "0",
+        "1",
+        "2",
+        "infinite"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "How many corners does a circle have?",
+        "el": "Πόσες γωνίες έχει ένας κύκλος;",
+        "de": "Wie viele Ecken hat ein Kreis?"
+      },
+      "answers": [
+        "0",
+        "1",
+        "2",
+        "infinite"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is the square root of 8 simplified?",
+        "el": "Ποια είναι η απλοποιημένη τετραγωνική ρίζα του 8;",
+        "de": "Was ist die vereinfachte Quadratwurzel von 8?"
+      },
+      "answers": [
+        "2√2",
+        "2√3",
+        "√8",
+        "4√2"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is the square root of 12 simplified?",
+        "el": "Ποια είναι η απλοποιημένη τετραγωνική ρίζα του 12;",
+        "de": "Was ist die vereinfachte Quadratwurzel von 12?"
+      },
+      "answers": [
+        "2√3",
+        "2√2",
+        "√12",
+        "3√2"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is the square root of 20 simplified?",
+        "el": "Ποια είναι η απλοποιημένη τετραγωνική ρίζα του 20;",
+        "de": "Was ist die vereinfachte Quadratwurzel von 20?"
+      },
+      "answers": [
+        "2√5",
+        "2√3",
+        "√20",
+        "4√5"
+      ],
+      "correct_answer": 0
+    }
   ]
 }

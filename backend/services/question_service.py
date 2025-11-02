@@ -248,3 +248,9 @@ def get_question_service() -> QuestionService:
     if _question_service_instance is None:
         _question_service_instance = QuestionService()
     return _question_service_instance
+
+
+def reset_question_service():
+    """Reset the singleton instance. Useful for testing or reloading after data changes."""
+    global _question_service_instance
+    _question_service_instance = None

@@ -81,6 +81,12 @@ if [ -f "backend/app.py" ] && [ -s "backend/app.py" ]; then
             pip install -q -r requirements.txt
         fi
         
+        # Load questions from JSON into database
+        if [ -f "database/migrate_questions.py" ] && [ -f "config/questions.json" ]; then
+            echo -e "${YELLOW}📚 Loading questions into database...${NC}"
+            python3 database/migrate_questions.py || echo -e "${YELLOW}⚠️  Warning: Question migration failed, continuing anyway...${NC}"
+        fi
+        
         # Check if Flask or FastAPI is configured
         if grep -q "Flask\|FastAPI" app.py 2>/dev/null; then
             echo -e "${GREEN}🔧 Starting backend API server...${NC}"
