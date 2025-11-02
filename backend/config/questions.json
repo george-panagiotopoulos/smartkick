@@ -1,807 +1,2800 @@
 {
+  "english_1": [
+    {
+      "question": {
+        "en": "How do you say 'dog' in Greek?",
+        "el": "How do you say 'dog' in Greek?",
+        "de": "How do you say 'dog' in Greek?"
+      },
+      "answers": [
+        "σκύλος",
+        "γάτα",
+        "ψάρι",
+        "πουλί"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "How do you say 'cat' in Greek?",
+        "el": "How do you say 'cat' in Greek?",
+        "de": "How do you say 'cat' in Greek?"
+      },
+      "answers": [
+        "σκύλος",
+        "γάτα",
+        "ψάρι",
+        "πουλί"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "How do you say 'bird' in Greek?",
+        "el": "How do you say 'bird' in Greek?",
+        "de": "How do you say 'bird' in Greek?"
+      },
+      "answers": [
+        "σκύλος",
+        "γάτα",
+        "πουλί",
+        "ψάρι"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": {
+        "en": "How do you say 'fish' in Greek?",
+        "el": "How do you say 'fish' in Greek?",
+        "de": "How do you say 'fish' in Greek?"
+      },
+      "answers": [
+        "σκύλος",
+        "γάτα",
+        "πουλί",
+        "ψάρι"
+      ],
+      "correct_answer": 3
+    },
+    {
+      "question": {
+        "en": "How do you say 'horse' in Greek?",
+        "el": "How do you say 'horse' in Greek?",
+        "de": "How do you say 'horse' in Greek?"
+      },
+      "answers": [
+        "άλογο",
+        "αγελάδα",
+        "πρόβατο",
+        "γουρούνι"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "How do you say 'cow' in Greek?",
+        "el": "How do you say 'cow' in Greek?",
+        "de": "How do you say 'cow' in Greek?"
+      },
+      "answers": [
+        "άλογο",
+        "αγελάδα",
+        "πρόβατο",
+        "γουρούνι"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "How do you say 'sheep' in Greek?",
+        "el": "How do you say 'sheep' in Greek?",
+        "de": "How do you say 'sheep' in Greek?"
+      },
+      "answers": [
+        "άλογο",
+        "αγελάδα",
+        "πρόβατο",
+        "γουρούνι"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": {
+        "en": "How do you say 'pig' in Greek?",
+        "el": "How do you say 'pig' in Greek?",
+        "de": "How do you say 'pig' in Greek?"
+      },
+      "answers": [
+        "άλογο",
+        "αγελάδα",
+        "πρόβατο",
+        "γουρούνι"
+      ],
+      "correct_answer": 3
+    },
+    {
+      "question": {
+        "en": "How do you say 'mother' in Greek?",
+        "el": "How do you say 'mother' in Greek?",
+        "de": "How do you say 'mother' in Greek?"
+      },
+      "answers": [
+        "μητέρα",
+        "πατέρας",
+        "γιος",
+        "κόρη"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "How do you say 'father' in Greek?",
+        "el": "How do you say 'father' in Greek?",
+        "de": "How do you say 'father' in Greek?"
+      },
+      "answers": [
+        "μητέρα",
+        "πατέρας",
+        "γιος",
+        "κόρη"
+      ],
+      "correct_answer": 1
+    }
+  ],
+  "geography_1": [
+    {
+      "question": {
+        "en": "What is the capital of the USA?",
+        "el": "Ποια είναι η πρωτεύουσα των ΗΠΑ;",
+        "de": "Was ist die Hauptstadt der USA?"
+      },
+      "answers": [
+        "Washington",
+        "New Delhi",
+        "New York",
+        "Los Angeles"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is the capital of Mexico?",
+        "el": "Ποια είναι η πρωτεύουσα του Μεξικού;",
+        "de": "Was ist die Hauptstadt von Mexiko?"
+      },
+      "answers": [
+        "Beijing",
+        "Mexico City",
+        "Guadalajara",
+        "Monterrey"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "What is the capital of China?",
+        "el": "Ποια είναι η πρωτεύουσα της Κίνας;",
+        "de": "Was ist die Hauptstadt von China?"
+      },
+      "answers": [
+        "Beijing",
+        "New Delhi",
+        "Shanghai",
+        "Hong Kong"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is the capital of India?",
+        "el": "Ποια είναι η πρωτεύουσα της Ινδίας;",
+        "de": "Was ist die Hauptstadt von Indien?"
+      },
+      "answers": [
+        "Moscow",
+        "New Delhi",
+        "Mumbai",
+        "Kolkata"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "What is the capital of Russia?",
+        "el": "Ποια είναι η πρωτεύουσα της Ρωσίας;",
+        "de": "Was ist die Hauptstadt von Russland?"
+      },
+      "answers": [
+        "Moscow",
+        "Almaty",
+        "Saint Petersburg",
+        "Novosibirsk"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is the capital of Kazakhstan?",
+        "el": "Ποια είναι η πρωτεύουσα του Καζακστάν;",
+        "de": "Was ist die Hauptstadt von Kasachstan?"
+      },
+      "answers": [
+        "Nur-Sultan",
+        "Almaty",
+        "Karaganda",
+        "Shymkent"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is the capital of England?",
+        "el": "Ποια είναι η πρωτεύουσα της Αγγλίας;",
+        "de": "Was ist die Hauptstadt von England?"
+      },
+      "answers": [
+        "London",
+        "Manchester",
+        "Liverpool",
+        "Birmingham"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is the capital of France?",
+        "el": "Ποια είναι η πρωτεύουσα της Γαλλίας;",
+        "de": "Was ist die Hauptstadt von Frankreich?"
+      },
+      "answers": [
+        "Lyon",
+        "Marseille",
+        "Paris",
+        "Toulouse"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": {
+        "en": "What is the capital of Spain?",
+        "el": "Ποια είναι η πρωτεύουσα της Ισπανίας;",
+        "de": "Was ist die Hauptstadt von Spanien?"
+      },
+      "answers": [
+        "Barcelona",
+        "Madrid",
+        "Seville",
+        "Valencia"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "What is the capital of Italy?",
+        "el": "Ποια είναι η πρωτεύουσα της Ιταλίας;",
+        "de": "Was ist die Hauptstadt von Italien?"
+      },
+      "answers": [
+        "Milan",
+        "Rome",
+        "Naples",
+        "Florence"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "What is the capital of Greece?",
+        "el": "Ποια είναι η πρωτεύουσα της Ελλάδας;",
+        "de": "Was ist die Hauptstadt von Griechenland?"
+      },
+      "answers": [
+        "Thessaloniki",
+        "Athens",
+        "Patras",
+        "Heraklion"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "What is the capital of Romania?",
+        "el": "Ποια είναι η πρωτεύουσα της Ρουμανίας;",
+        "de": "Was ist die Hauptstadt von Rumänien?"
+      },
+      "answers": [
+        "Bucharest",
+        "Cluj-Napoca",
+        "Timisoara",
+        "Iasi"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is the capital of Bulgaria?",
+        "el": "Ποια είναι η πρωτεύουσα της Βουλγαρίας;",
+        "de": "Was ist die Hauptstadt von Bulgarien?"
+      },
+      "answers": [
+        "Sofia",
+        "Plovdiv",
+        "Varna",
+        "Burgas"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is the capital of Germany?",
+        "el": "Ποια είναι η πρωτεύουσα της Γερμανίας;",
+        "de": "Was ist die Hauptstadt von Deutschland?"
+      },
+      "answers": [
+        "Berlin",
+        "Munich",
+        "Hamburg",
+        "Frankfurt"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is the capital of Switzerland?",
+        "el": "Ποια είναι η πρωτεύουσα της Ελβετίας;",
+        "de": "Was ist die Hauptstadt der Schweiz?"
+      },
+      "answers": [
+        "Bern",
+        "Zurich",
+        "Geneva",
+        "Basel"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is the capital of Austria?",
+        "el": "Ποια είναι η πρωτεύουσα της Αυστρίας;",
+        "de": "Was ist die Hauptstadt von Österreich?"
+      },
+      "answers": [
+        "Vienna",
+        "Graz",
+        "Linz",
+        "Salzburg"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "Which country is next to France?",
+        "el": "Ποια χώρα είναι δίπλα στη Γαλλία;",
+        "de": "Welches Land liegt neben Frankreich?"
+      },
+      "answers": [
+        "Spain",
+        "ΗΠΑ",
+        "Australia",
+        "China"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "Which country is next to Brazil?",
+        "el": "Ποια χώρα είναι δίπλα στη Βραζιλία;",
+        "de": "Welches Land liegt neben Brasilien?"
+      },
+      "answers": [
+        "Argentina",
+        "ΗΠΑ",
+        "Australia",
+        "Ιαπωνία"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "Which country is next to New Zealand?",
+        "el": "Ποια χώρα είναι δίπλα στη Νέα Ζηλανδία;",
+        "de": "Welches Land liegt neben Neuseeland?"
+      },
+      "answers": [
+        "Australia",
+        "ΗΠΑ",
+        "Canada",
+        "China"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "Which country is next to South Korea?",
+        "el": "Ποια χώρα είναι δίπλα στη Νότια Κορέα;",
+        "de": "Welches Land liegt neben Südkorea?"
+      },
+      "answers": [
+        "North Korea",
+        "ΗΠΑ",
+        "Australia",
+        "Βραζιλία"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "Which country is next to South Korea?",
+        "el": "Ποια χώρα είναι δίπλα στη Νότια Κορέα;",
+        "de": "Welches Land liegt neben Südkorea?"
+      },
+      "answers": [
+        "China",
+        "ΗΠΑ",
+        "Australia",
+        "Βραζιλία"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "Which country is next to the USA?",
+        "el": "Ποια χώρα είναι δίπλα στις ΗΠΑ;",
+        "de": "Welches Land liegt neben den USA?"
+      },
+      "answers": [
+        "Canada",
+        "Australia",
+        "China",
+        "Βραζιλία"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "Which country is next to Germany?",
+        "el": "Ποια χώρα είναι δίπλα στη Γερμανία;",
+        "de": "Welches Land liegt neben Deutschland?"
+      },
+      "answers": [
+        "France",
+        "ΗΠΑ",
+        "Australia",
+        "China"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "Which country is next to Italy?",
+        "el": "Ποια χώρα είναι δίπλα στην Ιταλία;",
+        "de": "Welches Land liegt neben Italien?"
+      },
+      "answers": [
+        "France",
+        "ΗΠΑ",
+        "Australia",
+        "China"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "Which country is next to Spain?",
+        "el": "Ποια χώρα είναι δίπλα στην Ισπανία;",
+        "de": "Welches Land liegt neben Spanien?"
+      },
+      "answers": [
+        "Portugal",
+        "ΗΠΑ",
+        "Australia",
+        "China"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "Which country is next to Greece?",
+        "el": "Ποια χώρα είναι δίπλα στην Ελλάδα;",
+        "de": "Welches Land liegt neben Griechenland?"
+      },
+      "answers": [
+        "Turkey",
+        "ΗΠΑ",
+        "Australia",
+        "Βραζιλία"
+      ],
+      "correct_answer": 0
+    }
+  ],
+  "german_1": [
+    {
+      "question": {
+        "en": "Wie sagt man 'Hund' auf Griechisch?",
+        "el": "Wie sagt man 'Hund' auf Griechisch?",
+        "de": "Wie sagt man 'Hund' auf Griechisch?"
+      },
+      "answers": [
+        "σκύλος",
+        "γάτα",
+        "πούλι",
+        "ψάρι"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "Wie sagt man 'Katze' auf Griechisch?",
+        "el": "Wie sagt man 'Katze' auf Griechisch?",
+        "de": "Wie sagt man 'Katze' auf Griechisch?"
+      },
+      "answers": [
+        "σκύλος",
+        "γάτα",
+        "πούλι",
+        "ψάρι"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "Wie sagt man 'Vogel' auf Griechisch?",
+        "el": "Wie sagt man 'Vogel' auf Griechisch?",
+        "de": "Wie sagt man 'Vogel' auf Griechisch?"
+      },
+      "answers": [
+        "σκύλος",
+        "γάτα",
+        "ποuλί",
+        "ψάρι"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": {
+        "en": "Wie sagt man 'Fisch' auf Griechisch?",
+        "el": "Wie sagt man 'Fisch' auf Griechisch?",
+        "de": "Wie sagt man 'Fisch' auf Griechisch?"
+      },
+      "answers": [
+        "σκύλος",
+        "γάτα",
+        "πούλι",
+        "ψάρι"
+      ],
+      "correct_answer": 3
+    },
+    {
+      "question": {
+        "en": "Wie sagt man 'Pferd' auf Griechisch?",
+        "el": "Wie sagt man 'Pferd' auf Griechisch?",
+        "de": "Wie sagt man 'Pferd' auf Griechisch?"
+      },
+      "answers": [
+        "άλογο",
+        "αγελάδα",
+        "πρόβατο",
+        "γουρούνι"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "Wie sagt man 'Kuh' auf Griechisch?",
+        "el": "Wie sagt man 'Kuh' auf Griechisch?",
+        "de": "Wie sagt man 'Kuh' auf Griechisch?"
+      },
+      "answers": [
+        "άλογο",
+        "αγελάδα",
+        "πρόβατο",
+        "γουρούνι"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "Wie sagt man 'Schaf' auf Griechisch?",
+        "el": "Wie sagt man 'Schaf' auf Griechisch?",
+        "de": "Wie sagt man 'Schaf' auf Griechisch?"
+      },
+      "answers": [
+        "άλογο",
+        "αγελάδα",
+        "πρόβατο",
+        "γουρούνι"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": {
+        "en": "Wie sagt man 'Schwein' auf Griechisch?",
+        "el": "Wie sagt man 'Schwein' auf Griechisch?",
+        "de": "Wie sagt man 'Schwein' auf Griechisch?"
+      },
+      "answers": [
+        "άλογο",
+        "αγελάδα",
+        "πρόβατο",
+        "γουρούνι"
+      ],
+      "correct_answer": 3
+    },
+    {
+      "question": {
+        "en": "Wie sagt man 'Hase' auf Griechisch?",
+        "el": "Wie sagt man 'Hase' auf Griechisch?",
+        "de": "Wie sagt man 'Hase' auf Griechisch?"
+      },
+      "answers": [
+        "κουνέλι",
+        "αλεπού",
+        "αρκούδα",
+        "λύκος"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "Wie sagt man 'Fuchs' auf Griechisch?",
+        "el": "Wie sagt man 'Fuchs' auf Griechisch?",
+        "de": "Wie sagt man 'Fuchs' auf Griechisch?"
+      },
+      "answers": [
+        "κουνέλι",
+        "αλεπού",
+        "αρκούδα",
+        "λύκος"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "Wie sagt man 'Mutter' auf Griechisch?",
+        "el": "Wie sagt man 'Mutter' auf Griechisch?",
+        "de": "Wie sagt man 'Mutter' auf Griechisch?"
+      },
+      "answers": [
+        "μητέρα",
+        "πατέρας",
+        "γιος",
+        "κόρη"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "Wie sagt man 'Vater' auf Griechisch?",
+        "el": "Wie sagt man 'Vater' auf Griechisch?",
+        "de": "Wie sagt man 'Vater' auf Griechisch?"
+      },
+      "answers": [
+        "μητέρα",
+        "πατέρας",
+        "γιος",
+        "κόρη"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "Wie sagt man 'Sohn' auf Griechisch?",
+        "el": "Wie sagt man 'Sohn' auf Griechisch?",
+        "de": "Wie sagt man 'Sohn' auf Griechisch?"
+      },
+      "answers": [
+        "μητέρα",
+        "πατέρας",
+        "γιος",
+        "κόρη"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": {
+        "en": "Wie sagt man 'Tochter' auf Griechisch?",
+        "el": "Wie sagt man 'Tochter' auf Griechisch?",
+        "de": "Wie sagt man 'Tochter' auf Griechisch?"
+      },
+      "answers": [
+        "μητέρα",
+        "πατέρας",
+        "γιος",
+        "κόρη"
+      ],
+      "correct_answer": 3
+    },
+    {
+      "question": {
+        "en": "Wie sagt man 'Bruder' auf Griechisch?",
+        "el": "Wie sagt man 'Bruder' auf Griechisch?",
+        "de": "Wie sagt man 'Bruder' auf Griechisch?"
+      },
+      "answers": [
+        "αδελφός",
+        "αδελφή",
+        "παππούς",
+        "γιαγιά"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "Wie sagt man 'Schwester' auf Griechisch?",
+        "el": "Wie sagt man 'Schwester' auf Griechisch?",
+        "de": "Wie sagt man 'Schwester' auf Griechisch?"
+      },
+      "answers": [
+        "αδελφός",
+        "αδελφή",
+        "παππούς",
+        "γιαγιά"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "Wie sagt man 'Großvater' auf Griechisch?",
+        "el": "Wie sagt man 'Großvater' auf Griechisch?",
+        "de": "Wie sagt man 'Großvater' auf Griechisch?"
+      },
+      "answers": [
+        "αδελφός",
+        "αδελφή",
+        "παππούς",
+        "γιαγιά"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": {
+        "en": "Wie sagt man 'Großmutter' auf Griechisch?",
+        "el": "Wie sagt man 'Großmutter' auf Griechisch?",
+        "de": "Wie sagt man 'Großmutter' auf Griechisch?"
+      },
+      "answers": [
+        "αδελφός",
+        "αδελφή",
+        "παππούς",
+        "γιαγιά"
+      ],
+      "correct_answer": 3
+    },
+    {
+      "question": {
+        "en": "Wie sagt man 'Onkel' auf Griechisch?",
+        "el": "Wie sagt man 'Onkel' auf Griechisch?",
+        "de": "Wie sagt man 'Onkel' auf Griechisch?"
+      },
+      "answers": [
+        "θείος",
+        "θεία",
+        "ανιψιός",
+        "ανιψιά"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "Wie sagt man 'Tante' auf Griechisch?",
+        "el": "Wie sagt man 'Tante' auf Griechisch?",
+        "de": "Wie sagt man 'Tante' auf Griechisch?"
+      },
+      "answers": [
+        "θείος",
+        "θεία",
+        "ανιψιός",
+        "ανιψιά"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "Πώς λέγεται το 'σκύλος' στα γερμανικά;",
+        "el": "Πώς λέγεται το 'σκύλος' στα γερμανικά;",
+        "de": "Πώς λέγεται το 'σκύλος' στα γερμανικά;"
+      },
+      "answers": [
+        "Hund",
+        "Katze",
+        "Vogel",
+        "Fisch"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "Πώς λέγεται η 'γάτα' στα γερμανικά;",
+        "el": "Πώς λέγεται η 'γάτα' στα γερμανικά;",
+        "de": "Πώς λέγεται η 'γάτα' στα γερμανικά;"
+      },
+      "answers": [
+        "Hund",
+        "Katze",
+        "Vogel",
+        "Fisch"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "Πώς λέγεται το 'ποuλί' στα γερμανικά;",
+        "el": "Πώς λέγεται το 'ποuλί' στα γερμανικά;",
+        "de": "Πώς λέγεται το 'ποuλί' στα γερμανικά;"
+      },
+      "answers": [
+        "Hund",
+        "Katze",
+        "Vogel",
+        "Fisch"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": {
+        "en": "Πώς λέγεται το 'ψάρι' στα γερμανικά;",
+        "el": "Πώς λέγεται το 'ψάρι' στα γερμανικά;",
+        "de": "Πώς λέγεται το 'ψάρι' στα γερμανικά;"
+      },
+      "answers": [
+        "Hund",
+        "Katze",
+        "Vogel",
+        "Fisch"
+      ],
+      "correct_answer": 3
+    },
+    {
+      "question": {
+        "en": "Πώς λέγεται το 'άλογο' στα γερμανικά;",
+        "el": "Πώς λέγεται το 'άλογο' στα γερμανικά;",
+        "de": "Πώς λέγεται το 'άλογο' στα γερμανικά;"
+      },
+      "answers": [
+        "Pferd",
+        "Kuh",
+        "Schaf",
+        "Schwein"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "Πώς λέγεται η 'αγελάδα' στα γερμανικά;",
+        "el": "Πώς λέγεται η 'αγελάδα' στα γερμανικά;",
+        "de": "Πώς λέγεται η 'αγελάδα' στα γερμανικά;"
+      },
+      "answers": [
+        "Pferd",
+        "Kuh",
+        "Schaf",
+        "Schwein"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "Πώς λέγεται το 'πρόβατο' στα γερμανικά;",
+        "el": "Πώς λέγεται το 'πρόβατο' στα γερμανικά;",
+        "de": "Πώς λέγεται το 'πρόβατο' στα γερμανικά;"
+      },
+      "answers": [
+        "Pferd",
+        "Kuh",
+        "Schaf",
+        "Schwein"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": {
+        "en": "Πώς λέγεται το 'γουρούνι' στα γερμανικά;",
+        "el": "Πώς λέγεται το 'γουρούνι' στα γερμανικά;",
+        "de": "Πώς λέγεται το 'γουρούνι' στα γερμανικά;"
+      },
+      "answers": [
+        "Pferd",
+        "Kuh",
+        "Schaf",
+        "Schwein"
+      ],
+      "correct_answer": 3
+    },
+    {
+      "question": {
+        "en": "Πώς λέγεται το 'κουνέλι' στα γερμανικά;",
+        "el": "Πώς λέγεται το 'κουνέλι' στα γερμανικά;",
+        "de": "Πώς λέγεται το 'κουνέλι' στα γερμανικά;"
+      },
+      "answers": [
+        "Hase",
+        "Fuchs",
+        "Bär",
+        "Wolf"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "Πώς λέγεται η 'αλεπού' στα γερμανικά;",
+        "el": "Πώς λέγεται η 'αλεπού' στα γερμανικά;",
+        "de": "Πώς λέγεται η 'αλεπού' στα γερμανικά;"
+      },
+      "answers": [
+        "Hase",
+        "Fuchs",
+        "Bär",
+        "Wolf"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "Πώς λέγεται η 'μητέρα' στα γερμανικά;",
+        "el": "Πώς λέγεται η 'μητέρα' στα γερμανικά;",
+        "de": "Πώς λέγεται η 'μητέρα' στα γερμανικά;"
+      },
+      "answers": [
+        "Mutter",
+        "Vater",
+        "Sohn",
+        "Tochter"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "Πώς λέγεται ο 'πατέρας' στα γερμανικά;",
+        "el": "Πώς λέγεται ο 'πατέρας' στα γερμανικά;",
+        "de": "Πώς λέγεται ο 'πατέρας' στα γερμανικά;"
+      },
+      "answers": [
+        "Mutter",
+        "Vater",
+        "Sohn",
+        "Tochter"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "Πώς λέγεται ο 'γιος' στα γερμανικά;",
+        "el": "Πώς λέγεται ο 'γιος' στα γερμανικά;",
+        "de": "Πώς λέγεται ο 'γιος' στα γερμανικά;"
+      },
+      "answers": [
+        "Mutter",
+        "Vater",
+        "Sohn",
+        "Tochter"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": {
+        "en": "Πώς λέγεται η 'κόρη' στα γερμανικά;",
+        "el": "Πώς λέγεται η 'κόρη' στα γερμανικά;",
+        "de": "Πώς λέγεται η 'κόρη' στα γερμανικά;"
+      },
+      "answers": [
+        "Mutter",
+        "Vater",
+        "Sohn",
+        "Tochter"
+      ],
+      "correct_answer": 3
+    },
+    {
+      "question": {
+        "en": "Πώς λέγεται ο 'αδελφός' στα γερμανικά;",
+        "el": "Πώς λέγεται ο 'αδελφός' στα γερμανικά;",
+        "de": "Πώς λέγεται ο 'αδελφός' στα γερμανικά;"
+      },
+      "answers": [
+        "Bruder",
+        "Schwester",
+        "Großvater",
+        "Großmutter"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "Πώς λέγεται η 'αδελφή' στα γερμανικά;",
+        "el": "Πώς λέγεται η 'αδελφή' στα γερμανικά;",
+        "de": "Πώς λέγεται η 'αδελφή' στα γερμανικά;"
+      },
+      "answers": [
+        "Bruder",
+        "Schwester",
+        "Großvater",
+        "Großmutter"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "Πώς λέγεται ο 'παππούς' στα γερμανικά;",
+        "el": "Πώς λέγεται ο 'παππούς' στα γερμανικά;",
+        "de": "Πώς λέγεται ο 'παππούς' στα γερμανικά;"
+      },
+      "answers": [
+        "Bruder",
+        "Schwester",
+        "Großvater",
+        "Großmutter"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": {
+        "en": "Πώς λέγεται η 'γιαγιά' στα γερμανικά;",
+        "el": "Πώς λέγεται η 'γιαγιά' στα γερμανικά;",
+        "de": "Πώς λέγεται η 'γιαγιά' στα γερμανικά;"
+      },
+      "answers": [
+        "Bruder",
+        "Schwester",
+        "Großvater",
+        "Großmutter"
+      ],
+      "correct_answer": 3
+    },
+    {
+      "question": {
+        "en": "Πώς λέγεται ο 'θείος' στα γερμανικά;",
+        "el": "Πώς λέγεται ο 'θείος' στα γερμανικά;",
+        "de": "Πώς λέγεται ο 'θείος' στα γερμανικά;"
+      },
+      "answers": [
+        "Onkel",
+        "Tante",
+        "Cousin",
+        "Cousine"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "Πώς λέγεται η 'θεία' στα γερμανικά;",
+        "el": "Πώς λέγεται η 'θεία' στα γερμανικά;",
+        "de": "Πώς λέγεται η 'θεία' στα γερμανικά;"
+      },
+      "answers": [
+        "Onkel",
+        "Tante",
+        "Cousin",
+        "Cousine"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "Was ist eins plus zwei?",
+        "el": "Was ist eins plus zwei?",
+        "de": "Was ist eins plus zwei?"
+      },
+      "answers": [
+        "drei",
+        "vier",
+        "fünf",
+        "sechs"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "Was ist fünf plus drei?",
+        "el": "Was ist fünf plus drei?",
+        "de": "Was ist fünf plus drei?"
+      },
+      "answers": [
+        "sieben",
+        "acht",
+        "neun",
+        "zehn"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "Was ist sieben plus vier?",
+        "el": "Was ist sieben plus vier?",
+        "de": "Was ist sieben plus vier?"
+      },
+      "answers": [
+        "zehn",
+        "elf",
+        "zwölf",
+        "dreizehn"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "Was ist neun plus sechs?",
+        "el": "Was ist neun plus sechs?",
+        "de": "Was ist neun plus sechs?"
+      },
+      "answers": [
+        "vierzehn",
+        "fünfzehn",
+        "sechzehn",
+        "siebzehn"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "Was ist acht plus sieben?",
+        "el": "Was ist acht plus sieben?",
+        "de": "Was ist acht plus sieben?"
+      },
+      "answers": [
+        "vierzehn",
+        "fünfzehn",
+        "sechzehn",
+        "siebzehn"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "Was ist zehn minus drei?",
+        "el": "Was ist zehn minus drei?",
+        "de": "Was ist zehn minus drei?"
+      },
+      "answers": [
+        "fünf",
+        "sechs",
+        "sieben",
+        "acht"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": {
+        "en": "Was ist zwölf minus fünf?",
+        "el": "Was ist zwölf minus fünf?",
+        "de": "Was ist zwölf minus fünf?"
+      },
+      "answers": [
+        "fünf",
+        "sechs",
+        "sieben",
+        "acht"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": {
+        "en": "Was ist fünfzehn minus acht?",
+        "el": "Was ist fünfzehn minus acht?",
+        "de": "Was ist fünfzehn minus acht?"
+      },
+      "answers": [
+        "fünf",
+        "sechs",
+        "sieben",
+        "acht"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": {
+        "en": "Was ist elf minus vier?",
+        "el": "Was ist elf minus vier?",
+        "de": "Was ist elf minus vier?"
+      },
+      "answers": [
+        "fünf",
+        "sechs",
+        "sieben",
+        "acht"
+      ],
+      "correct_answer": 2
+    }
+  ],
+  "greek_1": [
+    {
+      "question": {
+        "en": "Ποια είναι η σωστή γραφή της λέξης;",
+        "el": "Ποια είναι η σωστή γραφή της λέξης;",
+        "de": "Ποια είναι η σωστή γραφή της λέξης;"
+      },
+      "answers": [
+        "ποδοσφαιρο",
+        "ποδόσφαιρο",
+        "ποδοσφαιρό",
+        "ποδοσφαίρό"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "Ποια είναι η σωστή γραφή της λέξης;",
+        "el": "Ποια είναι η σωστή γραφή της λέξης;",
+        "de": "Ποια είναι η σωστή γραφή της λέξης;"
+      },
+      "answers": [
+        "παγωτο",
+        "παγωτό",
+        "παγώτο",
+        "παγώτό"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "Ποια είναι η σωστή γραφή της λέξης;",
+        "el": "Ποια είναι η σωστή γραφή της λέξης;",
+        "de": "Ποια είναι η σωστή γραφή της λέξης;"
+      },
+      "answers": [
+        "τυρι",
+        "τυρί",
+        "τυρύ",
+        "τυρύι"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "Ποια είναι η σωστή γραφή της λέξης;",
+        "el": "Ποια είναι η σωστή γραφή της λέξης;",
+        "de": "Ποια είναι η σωστή γραφή της λέξης;"
+      },
+      "answers": [
+        "ψωμι",
+        "ψωμί",
+        "ψωμύ",
+        "ψωμύι"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "Ποια είναι η σωστή γραφή της λέξης;",
+        "el": "Ποια είναι η σωστή γραφή της λέξης;",
+        "de": "Ποια είναι η σωστή γραφή της λέξης;"
+      },
+      "answers": [
+        "καφε",
+        "καφαίς",
+        "καφές",
+        "καφέσ"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": {
+        "en": "Ποια είναι η σωστή γραφή της λέξης;",
+        "el": "Ποια είναι η σωστή γραφή της λέξης;",
+        "de": "Ποια είναι η σωστή γραφή της λέξης;"
+      },
+      "answers": [
+        "γλυκο",
+        "γλυκό",
+        "γλυκώ",
+        "γλυκώο"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "Ποια είναι η σωστή γραφή της λέξης;",
+        "el": "Ποια είναι η σωστή γραφή της λέξης;",
+        "de": "Ποια είναι η σωστή γραφή της λέξης;"
+      },
+      "answers": [
+        "παιδι",
+        "παιδί",
+        "παιδύ",
+        "παιδύι"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "Ποια είναι η σωστή γραφή της λέξης;",
+        "el": "Ποια είναι η σωστή γραφή της λέξης;",
+        "de": "Ποια είναι η σωστή γραφή της λέξης;"
+      },
+      "answers": [
+        "σχολειο",
+        "σχολείο",
+        "σχολειό",
+        "σχολειώ"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "Ποια είναι η σωστή γραφή της λέξης;",
+        "el": "Ποια είναι η σωστή γραφή της λέξης;",
+        "de": "Ποια είναι η σωστή γραφή της λέξης;"
+      },
+      "answers": [
+        "βιβλιο",
+        "βιβλίο",
+        "βιβλιό",
+        "βιβλιώ"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "Ποια είναι η σωστή γραφή της λέξης;",
+        "el": "Ποια είναι η σωστή γραφή της λέξης;",
+        "de": "Ποια είναι η σωστή γραφή της λέξης;"
+      },
+      "answers": [
+        "οικογενεια",
+        "οικογένεια",
+        "οικογενειά",
+        "οικογενειώ"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "Ποια είναι η σωστή γραφή της λέξης;",
+        "el": "Ποια είναι η σωστή γραφή της λέξης;",
+        "de": "Ποια είναι η σωστή γραφή της λέξης;"
+      },
+      "answers": [
+        "αυτοκινητο",
+        "αυτοκίνητο",
+        "αυτοκινητό",
+        "αυτοκίνητό"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "Ποια είναι η σωστή γραφή της λέξης;",
+        "el": "Ποια είναι η σωστή γραφή της λέξης;",
+        "de": "Ποια είναι η σωστή γραφή της λέξης;"
+      },
+      "answers": [
+        "τηλεφωνο",
+        "τηλέφωνο",
+        "τηλέφονο",
+        "τηλέφωνό"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "Ποια είναι η σωστή γραφή της λέξης;",
+        "el": "Ποια είναι η σωστή γραφή της λέξης;",
+        "de": "Ποια είναι η σωστή γραφή της λέξης;"
+      },
+      "answers": [
+        "κομπιουτερ",
+        "κομπιούτερ",
+        "κομπιουτέρ",
+        "κομπιούτέρ"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "Ποια είναι η σωστή γραφή της λέξης;",
+        "el": "Ποια είναι η σωστή γραφή της λέξης;",
+        "de": "Ποια είναι η σωστή γραφή της λέξης;"
+      },
+      "answers": [
+        "δωματιο",
+        "δωμάτιο",
+        "δομάτιο",
+        "δωμάτιό"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "Ποια είναι η σωστή γραφή της λέξης;",
+        "el": "Ποια είναι η σωστή γραφή της λέξης;",
+        "de": "Ποια είναι η σωστή γραφή της λέξης;"
+      },
+      "answers": [
+        "παράθιρο",
+        "παράθυρο",
+        "παραθυρό",
+        "παράθηρό"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "Ποια είναι η σωστή γραφή της λέξης;",
+        "el": "Ποια είναι η σωστή γραφή της λέξης;",
+        "de": "Ποια είναι η σωστή γραφή της λέξης;"
+      },
+      "answers": [
+        "πώρτα",
+        "πόρτα",
+        "πορτά",
+        "πόρτα"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "Ποια είναι η σωστή γραφή της λέξης;",
+        "el": "Ποια είναι η σωστή γραφή της λέξης;",
+        "de": "Ποια είναι η σωστή γραφή της λέξης;"
+      },
+      "answers": [
+        "τραπέζη",
+        "τραπέζι",
+        "τραπεζί",
+        "τραπέζί"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "Ποια είναι η σωστή γραφή της λέξης;",
+        "el": "Ποια είναι η σωστή γραφή της λέξης;",
+        "de": "Ποια είναι η σωστή γραφή της λέξης;"
+      },
+      "answers": [
+        "κουζήνα",
+        "κουζίνα",
+        "κουζινά",
+        "κουζίνα"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "Ποια είναι η σωστή γραφή της λέξης;",
+        "el": "Ποια είναι η σωστή γραφή της λέξης;",
+        "de": "Ποια είναι η σωστή γραφή της λέξης;"
+      },
+      "answers": [
+        "μπανnο",
+        "μπάνιο",
+        "μπανιό",
+        "μπάνηω"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "Ποια είναι η σωστή γραφή της λέξης;",
+        "el": "Ποια είναι η σωστή γραφή της λέξης;",
+        "de": "Ποια είναι η σωστή γραφή της λέξης;"
+      },
+      "answers": [
+        "θησαυρός",
+        "θυσαβρος",
+        "θυσαβρός",
+        "θυσσαυρός"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "Ποια είναι η σωστή γραφή της λέξης;",
+        "el": "Ποια είναι η σωστή γραφή της λέξης;",
+        "de": "Ποια είναι η σωστή γραφή της λέξης;"
+      },
+      "answers": [
+        "τρυφίλι",
+        "τριφύλλι",
+        "τριφίλι",
+        "τρυφύλλι"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": {
+        "en": "Ποια είναι η σωστή γραφή της λέξης;",
+        "el": "Ποια είναι η σωστή γραφή της λέξης;",
+        "de": "Ποια είναι η σωστή γραφή της λέξης;"
+      },
+      "answers": [
+        "χελώνα",
+        "χελόνα",
+        "χαιλώνα",
+        "χελλώνα"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "Ποια είναι η σωστή γραφή της λέξης;",
+        "el": "Ποια είναι η σωστή γραφή της λέξης;",
+        "de": "Ποια είναι η σωστή γραφή της λέξης;"
+      },
+      "answers": [
+        "μελιτζάνα",
+        "μαιλητζάνα",
+        "μελιτζανα",
+        "μελιτζάννα"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "Ποια είναι η σωστή γραφή της λέξης;",
+        "el": "Ποια είναι η σωστή γραφή της λέξης;",
+        "de": "Ποια είναι η σωστή γραφή της λέξης;"
+      },
+      "answers": [
+        "τρίχαις",
+        "τρήχες",
+        "τρίχες",
+        "τριχές"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": {
+        "en": "Ποια είναι η σωστή γραφή της λέξης;",
+        "el": "Ποια είναι η σωστή γραφή της λέξης;",
+        "de": "Ποια είναι η σωστή γραφή της λέξης;"
+      },
+      "answers": [
+        "πηγαίνω",
+        "πιγαίνο",
+        "πηγαίνο",
+        "πιγαίνω"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "Ποια είναι η σωστή γραφή της λέξης;",
+        "el": "Ποια είναι η σωστή γραφή της λέξης;",
+        "de": "Ποια είναι η σωστή γραφή της λέξης;"
+      },
+      "answers": [
+        "τρώω",
+        "τρώο",
+        "τρωώ",
+        "τρόω"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "Ποια είναι η σωστή γραφή της λέξης;",
+        "el": "Ποια είναι η σωστή γραφή της λέξης;",
+        "de": "Ποια είναι η σωστή γραφή της λέξης;"
+      },
+      "answers": [
+        "πεπόνι",
+        "παιπόνη",
+        "πεπώνι",
+        "πεπόνη"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "Ποια είναι η σωστή γραφή της λέξης;",
+        "el": "Ποια είναι η σωστή γραφή της λέξης;",
+        "de": "Ποια είναι η σωστή γραφή της λέξης;"
+      },
+      "answers": [
+        "στρίβω",
+        "στρήβο",
+        "στρυβώ",
+        "στρύβω"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "Ποια είναι η σωστή γραφή της λέξης;",
+        "el": "Ποια είναι η σωστή γραφή της λέξης;",
+        "de": "Ποια είναι η σωστή γραφή της λέξης;"
+      },
+      "answers": [
+        "καθρέφτης",
+        "καθρεφτής",
+        "καθρευτής",
+        "καθρέφτις"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "Ποια είναι η σωστή γραφή της λέξης;",
+        "el": "Ποια είναι η σωστή γραφή της λέξης;",
+        "de": "Ποια είναι η σωστή γραφή της λέξης;"
+      },
+      "answers": [
+        "ποδήλατο",
+        "ποδύλατο",
+        "ποδηλάτο",
+        "ποδήλατω"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "Ποια είναι η σωστή γραφή της λέξης;",
+        "el": "Ποια είναι η σωστή γραφή της λέξης;",
+        "de": "Ποια είναι η σωστή γραφή της λέξης;"
+      },
+      "answers": [
+        "ευχαριστώ",
+        "ευχαρηστώ",
+        "ευχαιριστώ",
+        "ευχαριστο"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "Ποια είναι η σωστή γραφή της λέξης;",
+        "el": "Ποια είναι η σωστή γραφή της λέξης;",
+        "de": "Ποια είναι η σωστή γραφή της λέξης;"
+      },
+      "answers": [
+        "πρωί",
+        "προί",
+        "πρωη",
+        "προυί"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "Ποια είναι η σωστή γραφή της λέξης;",
+        "el": "Ποια είναι η σωστή γραφή της λέξης;",
+        "de": "Ποια είναι η σωστή γραφή της λέξης;"
+      },
+      "answers": [
+        "αύριο",
+        "αύρηο",
+        "άυριο",
+        "αύριω"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "Ποια είναι η σωστή γραφή της λέξης;",
+        "el": "Ποια είναι η σωστή γραφή της λέξης;",
+        "de": "Ποια είναι η σωστή γραφή της λέξης;"
+      },
+      "answers": [
+        "καλοκαίρι",
+        "καλοκαιρή",
+        "καλοκέιρι",
+        "καλοκαίρυ"
+      ],
+      "correct_answer": 0
+    }
+  ],
   "math_1": [
     {
-      "id": 1,
       "question": {
         "en": "What is 15 + 23?",
         "el": "Πόσο κάνει 15 + 23;",
         "de": "Was ist 15 + 23?"
       },
-      "answers": ["38", "36", "40", "35"],
+      "answers": [
+        "38",
+        "36",
+        "40",
+        "35"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 2,
       "question": {
         "en": "What is 42 - 18?",
         "el": "Πόσο κάνει 42 - 18;",
         "de": "Was ist 42 - 18?"
       },
-      "answers": ["24", "26", "22", "20"],
+      "answers": [
+        "24",
+        "26",
+        "22",
+        "20"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 3,
       "question": {
         "en": "What is 7 × 8?",
         "el": "Πόσο κάνει 7 × 8;",
         "de": "Was ist 7 × 8?"
       },
-      "answers": ["56", "54", "58", "60"],
+      "answers": [
+        "56",
+        "54",
+        "58",
+        "60"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 4,
       "question": {
         "en": "What is 29 + 31?",
         "el": "Πόσο κάνει 29 + 31;",
         "de": "Was ist 29 + 31?"
       },
-      "answers": ["60", "58", "62", "56"],
+      "answers": [
+        "60",
+        "58",
+        "62",
+        "56"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 5,
       "question": {
         "en": "What is 56 - 28?",
         "el": "Πόσο κάνει 56 - 28;",
         "de": "Was ist 56 - 28?"
       },
-      "answers": ["28", "30", "26", "24"],
+      "answers": [
+        "28",
+        "30",
+        "26",
+        "24"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 6,
       "question": {
         "en": "What is 6 × 9?",
         "el": "Πόσο κάνει 6 × 9;",
         "de": "Was ist 6 × 9?"
       },
-      "answers": ["54", "52", "56", "50"],
+      "answers": [
+        "54",
+        "52",
+        "56",
+        "50"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 7,
       "question": {
         "en": "What is 17 + 25?",
         "el": "Πόσο κάνει 17 + 25;",
         "de": "Was ist 17 + 25?"
       },
-      "answers": ["42", "40", "44", "38"],
+      "answers": [
+        "42",
+        "40",
+        "44",
+        "38"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 8,
       "question": {
         "en": "What is 38 - 45?",
         "el": "Πόσο κάνει 38 - 45;",
         "de": "Was ist 38 - 45?"
       },
-      "answers": ["-7", "-5", "-9", "-3"],
+      "answers": [
+        "-7",
+        "-5",
+        "-9",
+        "-3"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 9,
       "question": {
         "en": "What is 4 × 7?",
         "el": "Πόσο κάνει 4 × 7;",
         "de": "Was ist 4 × 7?"
       },
-      "answers": ["28", "26", "30", "24"],
+      "answers": [
+        "28",
+        "26",
+        "30",
+        "24"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 10,
       "question": {
         "en": "What is 33 + 19?",
         "el": "Πόσο κάνει 33 + 19;",
         "de": "Was ist 33 + 19?"
       },
-      "answers": ["52", "50", "54", "48"],
+      "answers": [
+        "52",
+        "50",
+        "54",
+        "48"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 11,
       "question": {
         "en": "What is 24 - 32?",
         "el": "Πόσο κάνει 24 - 32;",
         "de": "Was ist 24 - 32?"
       },
-      "answers": ["-8", "-6", "-10", "-4"],
+      "answers": [
+        "-8",
+        "-6",
+        "-10",
+        "-4"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 12,
       "question": {
         "en": "What is 9 × 5?",
         "el": "Πόσο κάνει 9 × 5;",
         "de": "Was ist 9 × 5?"
       },
-      "answers": ["45", "43", "47", "41"],
+      "answers": [
+        "45",
+        "43",
+        "47",
+        "41"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 13,
       "question": {
         "en": "What is 46 + 14?",
         "el": "Πόσο κάνει 46 + 14;",
         "de": "Was ist 46 + 14?"
       },
-      "answers": ["60", "58", "62", "56"],
+      "answers": [
+        "60",
+        "58",
+        "62",
+        "56"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 14,
       "question": {
         "en": "What is 52 - 30?",
         "el": "Πόσο κάνει 52 - 30;",
         "de": "Was ist 52 - 30?"
       },
-      "answers": ["22", "20", "24", "18"],
+      "answers": [
+        "22",
+        "20",
+        "24",
+        "18"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 15,
       "question": {
         "en": "What is 8 × 6?",
         "el": "Πόσο κάνει 8 × 6;",
         "de": "Was ist 8 × 6?"
       },
-      "answers": ["48", "46", "50", "44"],
+      "answers": [
+        "48",
+        "46",
+        "50",
+        "44"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 16,
       "question": {
         "en": "What is 21 + 27?",
         "el": "Πόσο κάνει 21 + 27;",
         "de": "Was ist 21 + 27?"
       },
-      "answers": ["48", "46", "50", "44"],
+      "answers": [
+        "48",
+        "46",
+        "50",
+        "44"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 17,
       "question": {
         "en": "What is 15 - 22?",
         "el": "Πόσο κάνει 15 - 22;",
         "de": "Was ist 15 - 22?"
       },
-      "answers": ["-7", "-5", "-9", "-3"],
+      "answers": [
+        "-7",
+        "-5",
+        "-9",
+        "-3"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 18,
       "question": {
         "en": "What is 3 × 9?",
         "el": "Πόσο κάνει 3 × 9;",
         "de": "Was ist 3 × 9?"
       },
-      "answers": ["27", "25", "29", "23"],
+      "answers": [
+        "27",
+        "25",
+        "29",
+        "23"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 19,
       "question": {
         "en": "What is 39 + 11?",
         "el": "Πόσο κάνει 39 + 11;",
         "de": "Was ist 39 + 11?"
       },
-      "answers": ["50", "48", "52", "46"],
+      "answers": [
+        "50",
+        "48",
+        "52",
+        "46"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 20,
       "question": {
         "en": "What is 28 - 36?",
         "el": "Πόσο κάνει 28 - 36;",
         "de": "Was ist 28 - 36?"
       },
-      "answers": ["-8", "-6", "-10", "-4"],
+      "answers": [
+        "-8",
+        "-6",
+        "-10",
+        "-4"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 21,
       "question": {
         "en": "What is 5 × 8?",
         "el": "Πόσο κάνει 5 × 8;",
         "de": "Was ist 5 × 8?"
       },
-      "answers": ["40", "38", "42", "36"],
+      "answers": [
+        "40",
+        "38",
+        "42",
+        "36"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 22,
       "question": {
         "en": "What is 44 + 16?",
         "el": "Πόσο κάνει 44 + 16;",
         "de": "Was ist 44 + 16?"
       },
-      "answers": ["60", "58", "62", "56"],
+      "answers": [
+        "60",
+        "58",
+        "62",
+        "56"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 23,
       "question": {
         "en": "What is 35 - 18?",
         "el": "Πόσο κάνει 35 - 18;",
         "de": "Was ist 35 - 18?"
       },
-      "answers": ["17", "15", "19", "13"],
+      "answers": [
+        "17",
+        "15",
+        "19",
+        "13"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 24,
       "question": {
         "en": "What is 2 × 7?",
         "el": "Πόσο κάνει 2 × 7;",
         "de": "Was ist 2 × 7?"
       },
-      "answers": ["14", "12", "16", "10"],
+      "answers": [
+        "14",
+        "12",
+        "16",
+        "10"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 25,
       "question": {
         "en": "What is 26 + 34?",
         "el": "Πόσο κάνει 26 + 34;",
         "de": "Was ist 26 + 34?"
       },
-      "answers": ["60", "58", "62", "56"],
+      "answers": [
+        "60",
+        "58",
+        "62",
+        "56"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 26,
       "question": {
         "en": "What is 19 - 25?",
         "el": "Πόσο κάνει 19 - 25;",
         "de": "Was ist 19 - 25?"
       },
-      "answers": ["-6", "-4", "-8", "-2"],
+      "answers": [
+        "-6",
+        "-4",
+        "-8",
+        "-2"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 27,
       "question": {
         "en": "What is 6 × 7?",
         "el": "Πόσο κάνει 6 × 7;",
         "de": "Was ist 6 × 7?"
       },
-      "answers": ["42", "40", "44", "38"],
+      "answers": [
+        "42",
+        "40",
+        "44",
+        "38"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 28,
       "question": {
         "en": "What is 47 + 13?",
         "el": "Πόσο κάνει 47 + 13;",
         "de": "Was ist 47 + 13?"
       },
-      "answers": ["60", "58", "62", "56"],
+      "answers": [
+        "60",
+        "58",
+        "62",
+        "56"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 29,
       "question": {
         "en": "What is 32 - 40?",
         "el": "Πόσο κάνει 32 - 40;",
         "de": "Was ist 32 - 40?"
       },
-      "answers": ["-8", "-6", "-10", "-4"],
+      "answers": [
+        "-8",
+        "-6",
+        "-10",
+        "-4"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 30,
       "question": {
         "en": "What is 4 × 6?",
         "el": "Πόσο κάνει 4 × 6;",
         "de": "Was ist 4 × 6?"
       },
-      "answers": ["24", "22", "26", "20"],
+      "answers": [
+        "24",
+        "22",
+        "26",
+        "20"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 31,
       "question": {
         "en": "What is 18 + 22?",
         "el": "Πόσο κάνει 18 + 22;",
         "de": "Was ist 18 + 22?"
       },
-      "answers": ["40", "38", "42", "36"],
+      "answers": [
+        "40",
+        "38",
+        "42",
+        "36"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 32,
       "question": {
         "en": "What is 14 - 20?",
         "el": "Πόσο κάνει 14 - 20;",
         "de": "Was ist 14 - 20?"
       },
-      "answers": ["-6", "-4", "-8", "-2"],
+      "answers": [
+        "-6",
+        "-4",
+        "-8",
+        "-2"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 33,
       "question": {
         "en": "What is 9 × 3?",
         "el": "Πόσο κάνει 9 × 3;",
         "de": "Was ist 9 × 3?"
       },
-      "answers": ["27", "25", "29", "23"],
+      "answers": [
+        "27",
+        "25",
+        "29",
+        "23"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 34,
       "question": {
         "en": "What is 41 + 19?",
         "el": "Πόσο κάνει 41 + 19;",
         "de": "Was ist 41 + 19?"
       },
-      "answers": ["60", "58", "62", "56"],
+      "answers": [
+        "60",
+        "58",
+        "62",
+        "56"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 35,
       "question": {
         "en": "What is 23 - 30?",
         "el": "Πόσο κάνει 23 - 30;",
         "de": "Was ist 23 - 30?"
       },
-      "answers": ["-7", "-5", "-9", "-3"],
+      "answers": [
+        "-7",
+        "-5",
+        "-9",
+        "-3"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 36,
       "question": {
         "en": "What is 7 × 4?",
         "el": "Πόσο κάνει 7 × 4;",
         "de": "Was ist 7 × 4?"
       },
-      "answers": ["28", "26", "30", "24"],
+      "answers": [
+        "28",
+        "26",
+        "30",
+        "24"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 37,
       "question": {
         "en": "What is 36 + 24?",
         "el": "Πόσο κάνει 36 + 24;",
         "de": "Was ist 36 + 24?"
       },
-      "answers": ["60", "58", "62", "56"],
+      "answers": [
+        "60",
+        "58",
+        "62",
+        "56"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 38,
       "question": {
         "en": "What is 16 - 23?",
         "el": "Πόσο κάνει 16 - 23;",
         "de": "Was ist 16 - 23?"
       },
-      "answers": ["-7", "-5", "-9", "-3"],
+      "answers": [
+        "-7",
+        "-5",
+        "-9",
+        "-3"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 39,
       "question": {
         "en": "What is 8 × 5?",
         "el": "Πόσο κάνει 8 × 5;",
         "de": "Was ist 8 × 5?"
       },
-      "answers": ["40", "38", "42", "36"],
+      "answers": [
+        "40",
+        "38",
+        "42",
+        "36"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 40,
       "question": {
         "en": "What is 50 - 59?",
         "el": "Πόσο κάνει 50 - 59;",
         "de": "Was ist 50 - 59?"
       },
-      "answers": ["-9", "-7", "-10", "-5"],
+      "answers": [
+        "-9",
+        "-7",
+        "-10",
+        "-5"
+      ],
       "correct_answer": 0
     }
   ],
   "math_2": [
     {
-      "id": 1,
       "question": {
         "en": "What is 245 + 178?",
         "el": "Πόσο κάνει 245 + 178;",
         "de": "Was ist 245 + 178?"
       },
-      "answers": ["423", "413", "433", "403"],
+      "answers": [
+        "423",
+        "413",
+        "433",
+        "403"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 2,
       "question": {
         "en": "What is 367 - 45?",
         "el": "Πόσο κάνει 367 - 45;",
         "de": "Was ist 367 - 45?"
       },
-      "answers": ["322", "312", "332", "302"],
+      "answers": [
+        "322",
+        "312",
+        "332",
+        "302"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 3,
       "question": {
         "en": "What is 8 × 34?",
         "el": "Πόσο κάνει 8 × 34;",
         "de": "Was ist 8 × 34?"
       },
-      "answers": ["272", "262", "282", "252"],
+      "answers": [
+        "272",
+        "262",
+        "282",
+        "252"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 4,
       "question": {
         "en": "What is 156 + 289?",
         "el": "Πόσο κάνει 156 + 289;",
         "de": "Was ist 156 + 289?"
       },
-      "answers": ["445", "435", "455", "425"],
+      "answers": [
+        "445",
+        "435",
+        "455",
+        "425"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 5,
       "question": {
         "en": "What is 432 - 67?",
         "el": "Πόσο κάνει 432 - 67;",
         "de": "Was ist 432 - 67?"
       },
-      "answers": ["365", "355", "375", "345"],
+      "answers": [
+        "365",
+        "355",
+        "375",
+        "345"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 6,
       "question": {
         "en": "What is 6 × 28?",
         "el": "Πόσο κάνει 6 × 28;",
         "de": "Was ist 6 × 28?"
       },
-      "answers": ["168", "158", "178", "148"],
+      "answers": [
+        "168",
+        "158",
+        "178",
+        "148"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 7,
       "question": {
         "en": "What is 234 + 567?",
         "el": "Πόσο κάνει 234 + 567;",
         "de": "Was ist 234 + 567?"
       },
-      "answers": ["801", "791", "811", "781"],
+      "answers": [
+        "801",
+        "791",
+        "811",
+        "781"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 8,
       "question": {
         "en": "What is 589 - 76?",
         "el": "Πόσο κάνει 589 - 76;",
         "de": "Was ist 589 - 76?"
       },
-      "answers": ["513", "503", "523", "493"],
+      "answers": [
+        "513",
+        "503",
+        "523",
+        "493"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 9,
       "question": {
         "en": "What is 9 × 45?",
         "el": "Πόσο κάνει 9 × 45;",
         "de": "Was ist 9 × 45?"
       },
-      "answers": ["405", "395", "415", "385"],
+      "answers": [
+        "405",
+        "395",
+        "415",
+        "385"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 10,
       "question": {
         "en": "What is 123 + 456?",
         "el": "Πόσο κάνει 123 + 456;",
         "de": "Was ist 123 + 456?"
       },
-      "answers": ["579", "569", "589", "559"],
+      "answers": [
+        "579",
+        "569",
+        "589",
+        "559"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 11,
       "question": {
         "en": "What is 678 - 89?",
         "el": "Πόσο κάνει 678 - 89;",
         "de": "Was ist 678 - 89?"
       },
-      "answers": ["589", "579", "599", "569"],
+      "answers": [
+        "589",
+        "579",
+        "599",
+        "569"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 12,
       "question": {
         "en": "What is 7 × 56?",
         "el": "Πόσο κάνει 7 × 56;",
         "de": "Was ist 7 × 56?"
       },
-      "answers": ["392", "382", "402", "372"],
+      "answers": [
+        "392",
+        "382",
+        "402",
+        "372"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 13,
       "question": {
         "en": "What is 345 + 678?",
         "el": "Πόσο κάνει 345 + 678;",
         "de": "Was ist 345 + 678?"
       },
-      "answers": ["1023", "1013", "1033", "1003"],
+      "answers": [
+        "1023",
+        "1013",
+        "1033",
+        "1003"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 14,
       "question": {
         "en": "What is 765 - 54?",
         "el": "Πόσο κάνει 765 - 54;",
         "de": "Was ist 765 - 54?"
       },
-      "answers": ["711", "701", "721", "691"],
+      "answers": [
+        "711",
+        "701",
+        "721",
+        "691"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 15,
       "question": {
         "en": "What is 5 × 67?",
         "el": "Πόσο κάνει 5 × 67;",
         "de": "Was ist 5 × 67?"
       },
-      "answers": ["335", "325", "345", "315"],
+      "answers": [
+        "335",
+        "325",
+        "345",
+        "315"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 16,
       "question": {
         "en": "What is 267 + 498?",
         "el": "Πόσο κάνει 267 + 498;",
         "de": "Was ist 267 + 498?"
       },
-      "answers": ["765", "755", "775", "745"],
+      "answers": [
+        "765",
+        "755",
+        "775",
+        "745"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 17,
       "question": {
         "en": "What is 856 - 92?",
         "el": "Πόσο κάνει 856 - 92;",
         "de": "Was ist 856 - 92?"
       },
-      "answers": ["764", "754", "774", "744"],
+      "answers": [
+        "764",
+        "754",
+        "774",
+        "744"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 18,
       "question": {
         "en": "What is 4 × 89?",
         "el": "Πόσο κάνει 4 × 89;",
         "de": "Was ist 4 × 89?"
       },
-      "answers": ["356", "346", "366", "336"],
+      "answers": [
+        "356",
+        "346",
+        "366",
+        "336"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 19,
       "question": {
         "en": "What is 178 + 623?",
         "el": "Πόσο κάνει 178 + 623;",
         "de": "Was ist 178 + 623?"
       },
-      "answers": ["801", "791", "811", "781"],
+      "answers": [
+        "801",
+        "791",
+        "811",
+        "781"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 20,
       "question": {
         "en": "What is 934 - 87?",
         "el": "Πόσο κάνει 934 - 87;",
         "de": "Was ist 934 - 87?"
       },
-      "answers": ["847", "837", "857", "827"],
+      "answers": [
+        "847",
+        "837",
+        "857",
+        "827"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 21,
       "question": {
         "en": "What is 3 × 72?",
         "el": "Πόσο κάνει 3 × 72;",
         "de": "Was ist 3 × 72?"
       },
-      "answers": ["216", "206", "226", "196"],
+      "answers": [
+        "216",
+        "206",
+        "226",
+        "196"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 22,
       "question": {
         "en": "What is 289 + 534?",
         "el": "Πόσο κάνει 289 + 534;",
         "de": "Was ist 289 + 534?"
       },
-      "answers": ["823", "813", "833", "803"],
+      "answers": [
+        "823",
+        "813",
+        "833",
+        "803"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 23,
       "question": {
         "en": "What is 647 - 73?",
         "el": "Πόσο κάνει 647 - 73;",
         "de": "Was ist 647 - 73?"
       },
-      "answers": ["574", "564", "584", "554"],
+      "answers": [
+        "574",
+        "564",
+        "584",
+        "554"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 24,
       "question": {
         "en": "What is 8 × 39?",
         "el": "Πόσο κάνει 8 × 39;",
         "de": "Was ist 8 × 39?"
       },
-      "answers": ["312", "302", "322", "292"],
+      "answers": [
+        "312",
+        "302",
+        "322",
+        "292"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 25,
       "question": {
         "en": "What is 456 + 789?",
         "el": "Πόσο κάνει 456 + 789;",
         "de": "Was ist 456 + 789?"
       },
-      "answers": ["1245", "1235", "1255", "1225"],
+      "answers": [
+        "1245",
+        "1235",
+        "1255",
+        "1225"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 26,
       "question": {
         "en": "What is 823 - 65?",
         "el": "Πόσο κάνει 823 - 65;",
         "de": "Was ist 823 - 65?"
       },
-      "answers": ["758", "748", "768", "738"],
+      "answers": [
+        "758",
+        "748",
+        "768",
+        "738"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 27,
       "question": {
         "en": "What is 6 × 48?",
         "el": "Πόσο κάνει 6 × 48;",
         "de": "Was ist 6 × 48?"
       },
-      "answers": ["288", "278", "298", "268"],
+      "answers": [
+        "288",
+        "278",
+        "298",
+        "268"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 28,
       "question": {
         "en": "What is 134 + 567?",
         "el": "Πόσο κάνει 134 + 567;",
         "de": "Was ist 134 + 567?"
       },
-      "answers": ["701", "691", "711", "681"],
+      "answers": [
+        "701",
+        "691",
+        "711",
+        "681"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 29,
       "question": {
         "en": "What is 952 - 84?",
         "el": "Πόσο κάνει 952 - 84;",
         "de": "Was ist 952 - 84?"
       },
-      "answers": ["868", "858", "878", "848"],
+      "answers": [
+        "868",
+        "858",
+        "878",
+        "848"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 30,
       "question": {
         "en": "What is 9 × 23?",
         "el": "Πόσο κάνει 9 × 23;",
         "de": "Was ist 9 × 23?"
       },
-      "answers": ["207", "197", "217", "187"],
+      "answers": [
+        "207",
+        "197",
+        "217",
+        "187"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 31,
       "question": {
         "en": "What is 378 + 692?",
         "el": "Πόσο κάνει 378 + 692;",
         "de": "Was ist 378 + 692?"
       },
-      "answers": ["1070", "1060", "1080", "1050"],
+      "answers": [
+        "1070",
+        "1060",
+        "1080",
+        "1050"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 32,
       "question": {
         "en": "What is 741 - 58?",
         "el": "Πόσο κάνει 741 - 58;",
         "de": "Was ist 741 - 58?"
       },
-      "answers": ["683", "673", "693", "663"],
+      "answers": [
+        "683",
+        "673",
+        "693",
+        "663"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 33,
       "question": {
         "en": "What is 7 × 91?",
         "el": "Πόσο κάνει 7 × 91;",
         "de": "Was ist 7 × 91?"
       },
-      "answers": ["637", "627", "647", "617"],
+      "answers": [
+        "637",
+        "627",
+        "647",
+        "617"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 34,
       "question": {
         "en": "What is 223 + 678?",
         "el": "Πόσο κάνει 223 + 678;",
         "de": "Was ist 223 + 678?"
       },
-      "answers": ["901", "891", "911", "881"],
+      "answers": [
+        "901",
+        "891",
+        "911",
+        "881"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 35,
       "question": {
         "en": "What is 835 - 46?",
         "el": "Πόσο κάνει 835 - 46;",
         "de": "Was ist 835 - 46?"
       },
-      "answers": ["789", "779", "799", "769"],
+      "answers": [
+        "789",
+        "779",
+        "799",
+        "769"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 36,
       "question": {
         "en": "What is 5 × 84?",
         "el": "Πόσο κάνει 5 × 84;",
         "de": "Was ist 5 × 84?"
       },
-      "answers": ["420", "410", "430", "400"],
+      "answers": [
+        "420",
+        "410",
+        "430",
+        "400"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 37,
       "question": {
         "en": "What is 467 + 823?",
         "el": "Πόσο κάνει 467 + 823;",
         "de": "Was ist 467 + 823?"
       },
-      "answers": ["1290", "1280", "1300", "1270"],
+      "answers": [
+        "1290",
+        "1280",
+        "1300",
+        "1270"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 38,
       "question": {
         "en": "What is 956 - 79?",
         "el": "Πόσο κάνει 956 - 79;",
         "de": "Was ist 956 - 79?"
       },
-      "answers": ["877", "867", "887", "857"],
+      "answers": [
+        "877",
+        "867",
+        "887",
+        "857"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 39,
       "question": {
         "en": "What is 4 × 76?",
         "el": "Πόσο κάνει 4 × 76;",
         "de": "Was ist 4 × 76?"
       },
-      "answers": ["304", "294", "314", "284"],
+      "answers": [
+        "304",
+        "294",
+        "314",
+        "284"
+      ],
       "correct_answer": 0
     },
     {
-      "id": 40,
       "question": {
         "en": "What is 512 + 689?",
         "el": "Πόσο κάνει 512 + 689;",
         "de": "Was ist 512 + 689?"
       },
-      "answers": ["1201", "1191", "1211", "1181"],
+      "answers": [
+        "1201",
+        "1191",
+        "1211",
+        "1181"
+      ],
       "correct_answer": 0
     }
   ]
 }
-
