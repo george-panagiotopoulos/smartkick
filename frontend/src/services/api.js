@@ -1,9 +1,21 @@
 /** API service for backend communication */
-const API_BASE_URL = 'http://localhost:8000/api'
+// Use the current hostname and port for API calls
+// This works both locally and on remote servers
+const getApiBaseUrl = () => {
+  // If in browser, use the same hostname/port as the frontend
+  if (typeof window !== 'undefined') {
+    const protocol = window.location.protocol
+    const hostname = window.location.hostname
+    // Use port 8000 for backend (frontend runs on 3000)
+    return `${protocol}//${hostname}:8000/api`
+  }
+  // Fallback for non-browser environments
+  return 'http://localhost:8000/api'
+}
 
 export async function startGame(duration = 'regular') {
   try {
-    const response = await fetch(`${API_BASE_URL}/game/start`, {
+    const response = await fetch(`${getApiBaseUrl()}/game/start`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -43,7 +55,7 @@ export async function startGame(duration = 'regular') {
 
 export async function executeAction(gameId, action, questionCorrect) {
   try {
-    const response = await fetch(`${API_BASE_URL}/game/action`, {
+    const response = await fetch(`${getApiBaseUrl()}/game/action`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -96,7 +108,7 @@ export async function executeAction(gameId, action, questionCorrect) {
 
 export async function updateScore(gameId, team, points = 1) {
   try {
-    const response = await fetch(`${API_BASE_URL}/game/score`, {
+    const response = await fetch(`${getApiBaseUrl()}/game/score`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -122,7 +134,7 @@ export async function updateScore(gameId, team, points = 1) {
 
 export async function getGameState(gameId) {
   try {
-    const response = await fetch(`${API_BASE_URL}/game/state/${gameId}`)
+    const response = await fetch(`${getApiBaseUrl()}/game/state/${gameId}`)
     
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`)
@@ -138,7 +150,7 @@ export async function getGameState(gameId) {
 
 export async function getProbability(gameId, actor, action) {
   try {
-    const response = await fetch(`${API_BASE_URL}/game/probability/${gameId}/${actor}/${action}`)
+    const response = await fetch(`${getApiBaseUrl()}/game/probability/${gameId}/${actor}/${action}`)
     
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`)
@@ -154,7 +166,7 @@ export async function getProbability(gameId, actor, action) {
 
 export async function getRandomQuestion(category = 'math_1', language = 'en') {
   try {
-    const response = await fetch(`${API_BASE_URL}/questions/random/${category}?language=${language}`)
+    const response = await fetch(`${getApiBaseUrl()}/questions/random/${category}?language=${language}`)
     
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`)
@@ -180,7 +192,7 @@ export async function getRandomQuestion(category = 'math_1', language = 'en') {
 
 export async function getQuestionCategories() {
   try {
-    const response = await fetch(`${API_BASE_URL}/questions/categories`)
+    const response = await fetch(`${getApiBaseUrl()}/questions/categories`)
     
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`)
