@@ -9,13 +9,16 @@ from services.config_service import get_config_service
 class GameState:
     """Represents the current state of a game"""
     
-    def __init__(self, game_id: Optional[str] = None):
+    def __init__(self, game_id: Optional[str] = None, duration: str = 'regular'):
         self.game_id = game_id or str(uuid.uuid4())
         self.blue_score = 0
         self.red_score = 0
         self.player_action_count = 0
+        self.total_action_count = 0  # Total actions from both player and opponent
         self.max_score = self._calculate_max_score()
         self.max_player_actions = 100
+        self.duration = duration  # 'short', 'regular', or 'long'
+        self.max_actions = self._calculate_max_actions(duration)  # Random max actions based on duration
         self.is_game_over = False
         self.game_over_reason = None
         self.created_at = datetime.now()
@@ -44,9 +47,40 @@ class GameState:
         else:
             return 6
     
+    def _calculate_max_actions(self, duration: str) -> int:
+        """
+        Calculate random max actions based on duration setting
+        
+        Args:
+            duration: 'short', 'regular', or 'long'
+        
+        Returns:
+            Random integer between min and max for the duration
+        """
+        config_service = get_config_service()
+        duration_config = config_service.get_game_duration()
+        
+        duration_type = duration_config.get(duration, duration_config.get('regular', {}))
+        if isinstance(duration_type, dict):
+            min_actions = duration_type.get('min', 60)
+            max_actions = duration_type.get('max', 90)
+        else:
+            # Fallback if structure is different
+            duration_type = duration_config.get('regular', {})
+            min_actions = duration_type.get('min', 60)
+            max_actions = duration_type.get('max', 90)
+        
+        return random.randint(min_actions, max_actions)
+    
     def increment_player_action(self):
         """Increment player action count"""
         self.player_action_count += 1
+        self.total_action_count += 1
+        self._check_game_over()
+    
+    def increment_total_action(self):
+        """Increment total action count (for opponent actions)"""
+        self.total_action_count += 1
         self._check_game_over()
     
     def update_score(self, team: str, points: int = 1):
@@ -79,10 +113,15 @@ class GameState:
             self.is_game_over = True
             self.game_over_reason = f"Red team reached max score ({self.max_score})"
         
-        # Check max player actions
+        # Check max player actions (legacy)
         if self.player_action_count >= self.max_player_actions:
             self.is_game_over = True
             self.game_over_reason = f"Reached max player actions ({self.max_player_actions})"
+        
+        # Check total action count (new game ending mechanism)
+        if self.total_action_count >= self.max_actions:
+            self.is_game_over = True
+            self.game_over_reason = f"Game ended after {self.max_actions} actions"
     
     def adjust_probability(self, action: str, correct: bool):
         """
@@ -139,8 +178,11 @@ class GameState:
             'blue_score': self.blue_score,
             'red_score': self.red_score,
             'player_action_count': self.player_action_count,
+            'total_action_count': self.total_action_count,
             'max_score': self.max_score,
             'max_player_actions': self.max_player_actions,
+            'max_actions': self.max_actions,
+            'duration': self.duration,
             'is_game_over': self.is_game_over,
             'game_over_reason': self.game_over_reason,
             'created_at': self.created_at.isoformat()
@@ -158,9 +200,17 @@ class GameService:
         game_rules = self.config_service.get_game_rules()
         self.max_player_actions = game_rules.get('max_player_actions', 100)
     
-    def create_game(self) -> GameState:
-        """Create a new game"""
-        game_state = GameState()
+    def create_game(self, duration: str = 'regular') -> GameState:
+        """
+        Create a new game
+        
+        Args:
+            duration: 'short', 'regular', or 'long' (default: 'regular')
+        
+        Returns:
+            New GameState instance
+        """
+        game_state = GameState(duration=duration)
         game_state.max_player_actions = self.max_player_actions
         self._games[game_state.game_id] = game_state
         return game_state

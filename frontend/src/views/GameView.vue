@@ -6,7 +6,10 @@
       <div class="game-header">
         <div class="header-top">
           <h1>SmartKick</h1>
-          <LanguageToggle />
+          <div class="controls">
+            <LanguageToggle />
+            <CategorySelector />
+          </div>
         </div>
         <div class="score">
           <span class="score-blue">
@@ -23,6 +26,9 @@
       <GameField />
       
       <ActionButtons />
+      
+      <!-- Game Over Modal -->
+      <GameOverModal :show="isGameOver" />
     
     <div class="game-info">
       <p v-if="ballPossession === 'blue' && !isCelebrating">
@@ -49,7 +55,9 @@ import { useLanguageStore } from '../store/languageStore'
 import GameField from '../components/GameField.vue'
 import ActionButtons from '../components/ActionButtons.vue'
 import LanguageToggle from '../components/LanguageToggle.vue'
+import CategorySelector from '../components/CategorySelector.vue'
 import TeamSelection from '../components/TeamSelection.vue'
+import GameOverModal from '../components/GameOverModal.vue'
 
 const gameStore = useGameStore()
 const languageStore = useLanguageStore()
@@ -77,6 +85,7 @@ const isCelebrating = computed(() => gameStore.isCelebrating)
 const teamSelectionComplete = computed(() => gameStore.teamSelectionComplete)
 const playerTeamInfo = computed(() => gameStore.playerTeamInfo)
 const opponentTeamInfo = computed(() => gameStore.opponentTeamInfo)
+const isGameOver = computed(() => gameStore.isGameOver)
 
 const currentPlayerPosition = computed(() => {
   const pos = gameStore.ballPosition.player
@@ -142,6 +151,12 @@ onMounted(() => {
   margin-bottom: 10px;
   flex-wrap: wrap;
   gap: 15px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .game-header h1 {

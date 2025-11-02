@@ -43,6 +43,12 @@
 
       <div class="selection-actions">
         <button
+          class="settings-button"
+          @click="showSettings = true"
+        >
+          ⚙️ {{ languageStore.t('ui.settings', 'Settings') }}
+        </button>
+        <button
           class="start-button"
           :disabled="!canStart"
           @click="startGame"
@@ -50,17 +56,92 @@
           {{ languageStore.t('ui.start_game', 'Start Game') }}
         </button>
       </div>
+      
+      <!-- Settings Modal -->
+      <div v-if="showSettings" class="settings-modal-overlay" @click.self="showSettings = false">
+        <div class="settings-modal">
+          <div class="settings-header">
+            <h2>{{ languageStore.t('ui.settings', 'Settings') }}</h2>
+            <button class="close-button" @click="showSettings = false">✕</button>
+          </div>
+          <div class="settings-content">
+            <h3>{{ languageStore.t('ui.game_duration', 'Game Duration') }}</h3>
+            <div class="duration-options">
+              <label
+                v-for="option in durationOptions"
+                :key="option.value"
+                :class="['duration-option', { selected: selectedDuration === option.value }]"
+              >
+                <input
+                  type="radio"
+                  :value="option.value"
+                  v-model="selectedDuration"
+                />
+                <div class="option-content">
+                  <div class="option-name">{{ option.label }}</div>
+                  <div class="option-desc">{{ option.description }}</div>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="settings-footer">
+            <button class="save-button" @click="saveSettings">
+              {{ languageStore.t('ui.save', 'Save') }}
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { useGameStore } from '../store/gameStore'
 import { useLanguageStore } from '../store/languageStore'
 
 const gameStore = useGameStore()
 const languageStore = useLanguageStore()
+
+const showSettings = ref(false)
+const selectedDuration = ref('regular')
+
+const durationOptions = computed(() => [
+  {
+    value: 'tiny',
+    label: languageStore.t('ui.tiny', 'Tiny'),
+    description: '10-15 actions'
+  },
+  {
+    value: 'short',
+    label: languageStore.t('ui.short', 'Short'),
+    description: '40-50 actions'
+  },
+  {
+    value: 'regular',
+    label: languageStore.t('ui.regular', 'Regular'),
+    description: '60-90 actions'
+  },
+  {
+    value: 'long',
+    label: languageStore.t('ui.long', 'Long'),
+    description: '100-120 actions'
+  }
+])
+
+// Load saved duration from localStorage
+onMounted(() => {
+  const savedDuration = localStorage.getItem('gameDuration')
+  if (savedDuration && ['tiny', 'short', 'regular', 'long'].includes(savedDuration)) {
+    selectedDuration.value = savedDuration
+  }
+})
+
+function saveSettings() {
+  localStorage.setItem('gameDuration', selectedDuration.value)
+  gameStore.setGameDuration(selectedDuration.value)
+  showSettings.value = false
+}
 
 const teams = [
   {
@@ -142,6 +223,7 @@ function startGame() {
   if (!canStart.value) return
   
   gameStore.setTeams(selectedPlayerTeam.value, selectedOpponentTeam.value)
+  gameStore.setGameDuration(selectedDuration.value) // Set duration before starting
   gameStore.setTeamSelectionComplete(true)
 }
 </script>
@@ -303,6 +385,162 @@ function startGame() {
   background: #ccc;
   cursor: not-allowed;
   opacity: 0.6;
+}
+
+.settings-button {
+  background: #666;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 15px;
+}
+
+.settings-button:hover {
+  background: #555;
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.settings-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.settings-modal {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.settings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.settings-header h2 {
+  margin: 0;
+  color: #333;
+  font-size: 1.8em;
+}
+
+.close-button {
+  background: transparent;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #666;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.close-button:hover {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.settings-content h3 {
+  margin: 0 0 20px 0;
+  color: #333;
+  font-size: 1.3em;
+}
+
+.duration-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.duration-option {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border: 3px solid #ddd;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #f9f9f9;
+}
+
+.duration-option:hover {
+  background: #f0f0f0;
+  border-color: #4CAF50;
+}
+
+.duration-option.selected {
+  background: #e8f5e9;
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+.duration-option input[type="radio"] {
+  margin-right: 15px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.option-content {
+  flex: 1;
+}
+
+.option-name {
+  font-weight: bold;
+  color: #333;
+  font-size: 1.1em;
+  margin-bottom: 5px;
+}
+
+.option-desc {
+  color: #666;
+  font-size: 0.9em;
+}
+
+.settings-footer {
+  margin-top: 30px;
+  text-align: right;
+}
+
+.save-button {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.save-button:hover {
+  background: #45a049;
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
 }
 
 @media (max-width: 768px) {

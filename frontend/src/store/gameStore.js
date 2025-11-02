@@ -17,6 +17,9 @@ export const useGameStore = defineStore('game', () => {
   const gameOverReason = ref(null) // Reason game ended
   const maxScore = ref(null) // Max score for this game
   const playerActionCount = ref(0) // Track player actions
+  const totalActionCount = ref(0) // Track total actions (player + opponent)
+  const maxActions = ref(null) // Max actions for game (based on duration)
+  const gameDuration = ref('regular') // Game duration setting: 'short', 'regular', or 'long'
   const isShooting = ref(false) // Track if a shot is in progress
   
   // Team selection
@@ -88,14 +91,26 @@ export const useGameStore = defineStore('game', () => {
     // Start game with backend
     try {
       const { startGame } = await import('../services/api')
-      const result = await startGame()
+      const result = await startGame(gameDuration.value) // Pass duration setting
       if (result.success) {
         gameId.value = result.game_id
         maxScore.value = result.max_score
+        maxActions.value = result.max_actions
+        totalActionCount.value = result.total_action_count || 0
       }
     } catch (error) {
       console.error('Error starting game:', error)
-      // Continue with local game
+      // Continue with local game - set defaults based on duration
+      if (!maxActions.value) {
+        const durationRanges = {
+          tiny: { min: 10, max: 15 },
+          short: { min: 40, max: 50 },
+          regular: { min: 60, max: 90 },
+          long: { min: 100, max: 120 }
+        }
+        const range = durationRanges[gameDuration.value] || durationRanges.regular
+        maxActions.value = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min
+      }
     }
     
     // Reset field positions to defaults
@@ -149,6 +164,7 @@ export const useGameStore = defineStore('game', () => {
     blueScore.value = 0
     redScore.value = 0
     playerActionCount.value = 0
+    totalActionCount.value = 0
     isGameOver.value = false
     gameOverReason.value = null
     isShooting.value = false
@@ -166,6 +182,12 @@ export const useGameStore = defineStore('game', () => {
   
   function incrementPlayerAction() {
     playerActionCount.value++
+    totalActionCount.value++
+    checkGameOver()
+  }
+  
+  function incrementTotalAction() {
+    totalActionCount.value++
     checkGameOver()
   }
   
@@ -186,10 +208,18 @@ export const useGameStore = defineStore('game', () => {
       }
     }
     
-    // Check max player actions (100)
+    // Check max player actions (legacy - 100)
     if (playerActionCount.value >= 100) {
       isGameOver.value = true
       gameOverReason.value = 'Reached max player actions (100)'
+      gameMessage.value = `Game Over! ${gameOverReason.value}`
+      return
+    }
+    
+    // Check total action count (new game ending mechanism)
+    if (maxActions.value !== null && totalActionCount.value >= maxActions.value) {
+      isGameOver.value = true
+      gameOverReason.value = `Game ended after ${maxActions.value} actions`
       gameMessage.value = `Game Over! ${gameOverReason.value}`
       return
     }
@@ -860,6 +890,7 @@ export const useGameStore = defineStore('game', () => {
     const currentFieldPos = opponent[currentPlayerKey]?.fieldPosition
     
     // Handle goalkeeper first - pass to midfielder (don't wait, handle immediately)
+    // This is an automatic setup move, not a counted action
     if (currentPlayerKey === 'gk' || currentFieldPos === 6) {
       // Reset the flag to allow this action
       isOpponentActionPending.value = false
@@ -906,6 +937,9 @@ export const useGameStore = defineStore('game', () => {
     }
     
     isOpponentActionPending.value = true
+    
+    // Increment total action count for opponent actions (after goalkeeper setup)
+    incrementTotalAction()
     
     // Wait a moment before opponent acts
     await new Promise(resolve => setTimeout(resolve, 1000))
@@ -1547,6 +1581,56 @@ export const useGameStore = defineStore('game', () => {
     teamSelectionComplete.value = complete
   }
   
+  function setGameDuration(duration) {
+    gameDuration.value = duration
+  }
+  
+  function resetGame() {
+    // Reset all game state to initial values
+    setTeamSelectionComplete(false)
+    isGameOver.value = false
+    gameOverReason.value = null
+    blueScore.value = 0
+    redScore.value = 0
+    playerActionCount.value = 0
+    totalActionCount.value = 0
+    maxActions.value = null
+    maxScore.value = null
+    gameMessage.value = ''
+    isCelebrating.value = false
+    isShooting.value = false
+    ballPossession.value = 'blue'
+    ballPosition.value = { team: 'blue', player: 'mid1' }
+    canShoot.value = false
+    defenderDribbledPast.value = false
+    isOpponentActionPending.value = false
+    gameId.value = null
+    
+    // Reset player positions
+    resetPlayerPositions()
+    
+    // Reset all hasBall flags
+    Object.keys(bluePlayers.value).forEach(key => {
+      bluePlayers.value[key].hasBall = false
+    })
+    Object.keys(redPlayers.value).forEach(key => {
+      redPlayers.value[key].hasBall = false
+    })
+    
+    // Reset stances
+    bluePlayers.value.gk.stance = 'standing'
+    bluePlayers.value.def.stance = 'defending'
+    bluePlayers.value.mid1.stance = 'standing'
+    bluePlayers.value.mid2.stance = 'standing'
+    bluePlayers.value.att.stance = 'standing'
+    
+    redPlayers.value.gk.stance = 'standing'
+    redPlayers.value.def.stance = 'defending'
+    redPlayers.value.mid1.stance = 'standing'
+    redPlayers.value.mid2.stance = 'standing'
+    redPlayers.value.att.stance = 'standing'
+  }
+  
   // Get team ID for rendering (maps 'blue'/'red' to actual team IDs)
   function getTeamId(team) {
     if (team === 'blue') {
@@ -1630,8 +1714,14 @@ export const useGameStore = defineStore('game', () => {
     checkShootAvailability,
     setTeams,
     setTeamSelectionComplete,
+    setGameDuration,
+    resetGame,
     getTeamId,
-    getTeamInfo
+    getTeamInfo,
+    incrementTotalAction,
+    totalActionCount,
+    maxActions,
+    gameDuration
   }
 })
 

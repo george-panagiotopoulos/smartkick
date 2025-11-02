@@ -9,14 +9,24 @@ game_bp = Blueprint('game', __name__)
 @game_bp.route('/start', methods=['POST'])
 def start_game():
     """Start a new game"""
+    data = request.get_json() or {}
+    duration = data.get('duration', 'regular')  # Get duration from request, default to 'regular'
+    
+    # Validate duration
+    if duration not in ['tiny', 'short', 'regular', 'long']:
+        duration = 'regular'
+    
     game_service = get_game_service()
-    game_state = game_service.create_game()
+    game_state = game_service.create_game(duration=duration)
     
     return jsonify({
         'success': True,
         'game_id': game_state.game_id,
         'max_score': game_state.max_score,
-        'max_player_actions': game_state.max_player_actions
+        'max_player_actions': game_state.max_player_actions,
+        'max_actions': game_state.max_actions,
+        'total_action_count': game_state.total_action_count,
+        'duration': game_state.duration
     }), 201
 
 
@@ -135,3 +145,15 @@ def get_probability(game_id, actor, action):
         }), 200
     except ValueError as e:
         return jsonify({'success': False, 'error': str(e)}), 400
+
+
+@game_bp.route('/settings/duration', methods=['GET'])
+def get_duration_settings():
+    """Get game duration settings"""
+    config_service = get_config_service()
+    duration_config = config_service.get_game_duration()
+    
+    return jsonify({
+        'success': True,
+        'duration_settings': duration_config
+    }), 200

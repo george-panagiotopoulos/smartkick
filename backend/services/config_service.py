@@ -107,6 +107,16 @@ class ConfigService:
         """Get game rules configuration"""
         return self._config.get('game_rules', {})
     
+    def get_game_duration(self) -> Dict:
+        """Get game duration configuration"""
+        return self._config.get('game_duration', {
+            'tiny': {'min': 10, 'max': 15},
+            'short': {'min': 40, 'max': 50},
+            'regular': {'min': 60, 'max': 90},
+            'long': {'min': 100, 'max': 120},
+            'default': 'regular'
+        })
+    
     def get_config(self) -> Dict:
         """Get full configuration"""
         return self._config.copy()

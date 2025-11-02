@@ -1,11 +1,6 @@
 <template>
   <div>
-    <div v-if="gameStore.isGameOver" class="game-over-message">
-      <h2>Game Over!</h2>
-      <p>{{ gameStore.gameOverReason }}</p>
-      <p>Final Score: Blue {{ gameStore.blueScore }} - {{ gameStore.redScore }} Red</p>
-    </div>
-    <div class="action-buttons" v-else-if="isPlayerTurn && !isCelebrating">
+    <div class="action-buttons" v-if="isPlayerTurn && !isCelebrating && !gameStore.isGameOver">
       <button
         class="action-btn pass-btn"
         @click="handlePass"
@@ -28,7 +23,7 @@
         {{ languageStore.t('ui.shoot', 'Shoot') }}
       </button>
     </div>
-    <div v-else-if="!isCelebrating" class="opponent-turn">
+    <div v-else-if="!isCelebrating && !gameStore.isGameOver" class="opponent-turn">
       <p>{{ languageStore.t('ui.opponent_turn_text', "Opponent's turn...") }}</p>
       <button
         v-if="canTackle"
@@ -39,7 +34,7 @@
         {{ languageStore.t('ui.tackle', 'Tackle') }}
       </button>
     </div>
-    <div v-else class="celebrating">
+    <div v-else-if="isCelebrating && !gameStore.isGameOver" class="celebrating">
       <p>{{ languageStore.t('ui.celebrating_goal', '🎉 Celebrating goal! 🎉') }}</p>
     </div>
     
@@ -57,15 +52,15 @@ import { computed, ref, onMounted } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useGameStore } from '../store/gameStore'
 import { useLanguageStore } from '../store/languageStore'
+import { useCategoryStore } from '../store/categoryStore'
 import { checkActionSuccess } from '../services/gameLogic'
-import { executeAction, getRandomQuestion, getQuestionCategories } from '../services/api'
+import { executeAction, getRandomQuestion } from '../services/api'
 import QuestionModal from './QuestionModal.vue'
 
 const gameStore = useGameStore()
 const languageStore = useLanguageStore()
+const categoryStore = useCategoryStore()
 const { currentLanguage } = storeToRefs(languageStore)
-
-const availableCategories = ref([])
 
 const isProcessing = ref(false)
 const showQuestionModal = ref(false)
@@ -120,17 +115,9 @@ const canDribble = computed(() => {
   return currentFieldPos === 5 || currentFieldPos === 3 || currentFieldPos === 4 || currentFieldPos === 8 || currentFieldPos === 9
 })
 
-// Load available categories on mount
+// Initialize category store on mount
 onMounted(async () => {
-  try {
-    const categories = await getQuestionCategories()
-    availableCategories.value = categories
-    console.log('Available question categories:', categories)
-  } catch (error) {
-    console.error('Error loading categories:', error)
-    // Fallback to default categories
-    availableCategories.value = ['math_1', 'math_2', 'english_1', 'german_1', 'greek_1', 'geography_1']
-  }
+  await categoryStore.initializeCategories()
 })
 
 async function showQuestion(actionType) {
@@ -139,15 +126,27 @@ async function showQuestion(actionType) {
   // Get current language using storeToRefs for proper reactivity
   const language = currentLanguage.value || 'en'
   
-  // Select a random category from available categories
+  // Select a random category from selected categories only
+  const selectedCategories = categoryStore.selectedCategories
   let category = 'math_1' // Default fallback
-  if (availableCategories.value.length > 0) {
-    // Randomly select a category
-    const randomIndex = Math.floor(Math.random() * availableCategories.value.length)
-    category = availableCategories.value[randomIndex]
+  
+  if (selectedCategories.length > 0) {
+    // Randomly select a category from selected categories
+    const randomIndex = Math.floor(Math.random() * selectedCategories.length)
+    category = selectedCategories[randomIndex]
+  } else {
+    // If no categories selected, try to use available categories as fallback
+    const availableCategories = categoryStore.availableCategories
+    if (availableCategories.length > 0) {
+      const randomIndex = Math.floor(Math.random() * availableCategories.length)
+      category = availableCategories[randomIndex]
+      console.warn('No categories selected! Using available category as fallback:', category)
+    } else {
+      console.warn('No categories available! Using hardcoded fallback:', category)
+    }
   }
   
-  console.log('Fetching question with language:', language, 'for category:', category) // Debug log
+  console.log('Fetching question with language:', language, 'for category:', category, 'from selected:', selectedCategories) // Debug log
   
   try {
     // Fetch random question from backend

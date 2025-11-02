@@ -1,13 +1,14 @@
 /** API service for backend communication */
 const API_BASE_URL = 'http://localhost:8000/api'
 
-export async function startGame() {
+export async function startGame(duration = 'regular') {
   try {
     const response = await fetch(`${API_BASE_URL}/game/start`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
-      }
+      },
+      body: JSON.stringify({ duration })
     })
     
     if (!response.ok) {
@@ -19,11 +20,23 @@ export async function startGame() {
   } catch (error) {
     console.error('Error starting game:', error)
     // Return fallback data if backend is not available
+    const durationRanges = {
+      tiny: { min: 10, max: 15 },
+      short: { min: 40, max: 50 },
+      regular: { min: 60, max: 90 },
+      long: { min: 100, max: 120 }
+    }
+    const range = durationRanges[duration] || durationRanges.regular
+    const maxActions = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min
+    
     return {
       success: true,
       game_id: 'local-game',
       max_score: 5,
-      max_player_actions: 100
+      max_player_actions: 100,
+      max_actions: maxActions,
+      total_action_count: 0,
+      duration: duration
     }
   }
 }
@@ -180,7 +193,7 @@ export async function getQuestionCategories() {
     return []
   } catch (error) {
     console.error('Error fetching categories:', error)
-    return ['math_1', 'math_2']
+    return ['math_1', 'math_2', 'math_3', 'english_1', 'german_1', 'greek_1', 'geography_1']
   }
 }
 
