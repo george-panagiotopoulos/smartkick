@@ -1,0 +1,35 @@
+{
+  "probabilities": {
+    "player": {
+      "pass": 0.75,
+      "dribble": 0.55,
+      "shoot": 0.45,
+      "tackle": 0.50
+    },
+    "opponent": {
+      "pass": 0.80,
+      "dribble": 0.60,
+      "shoot": 0.50,
+      "tackle": 0.60
+    },
+    "goalkeeper_save": 0.50
+  },
+  "variables": {
+    "player_pass": null,
+    "player_dribble": null,
+    "player_shoot": null,
+    "player_tackle": null,
+    "opponent_pass": null,
+    "opponent_dribble": null,
+    "opponent_shoot": null,
+    "opponent_tackle": null
+  },
+  "game_rules": {
+    "actions_to_clear_defense": 3,
+    "match_duration_minutes": 5,
+    "max_score": null,
+    "max_player_actions": 100
+  },
+  "foul_penalty": "free_kick"
+}
+

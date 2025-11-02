@@ -1,0 +1,107 @@
+# Football Edu Game - Cursor Rules
+
+## Project Overview
+This is an educational football game web application for children aged 7-8 years old. The game combines educational questions with football gameplay mechanics.
+
+## Design Document
+**ALWAYS refer to and follow the game design document located at: `Game Design/gameDesign.txt`**
+
+All game mechanics, rules, UI/UX requirements, and architecture decisions should align with the design document. Before making any significant changes, review the design document first.
+
+## Technology Stack
+
+### Backend
+- **Language**: Python 3.8+
+- **Framework**: Flask or FastAPI (lightweight web framework)
+- **Database**: SQLite (using Python sqlite3 module)
+- **API**: RESTful API endpoints
+
+### Frontend
+- **Framework**: Vue.js 3.x
+- **Build Tool**: Vite
+- **Styling**: CSS3 with mobile-responsive design
+- **State Management**: Vuex or Pinia (if needed)
+
+### Data Storage
+- **Questions**: SQLite database
+- **Configuration**: JSON/YAML configuration files
+- **Translations**: JSON files for i18n
+
+## Key Requirements
+
+### Game Mechanics
+- 5v5 mini soccer format (4 outfield + 1 goalkeeper per team)
+- Actions: Pass, Dribble, Shoot, Tackle
+- Each action triggers educational multiple-choice questions
+- Success probabilities are configurable via `game_config.json`
+- Defense must be cleared before shooting (configurable number of actions)
+- Opponent AI randomly selects actions
+- All percentages/configurable values must be loaded from configuration files
+
+### Internationalization
+- Support 3 languages: English (en), Greek (el), German (de)
+- All UI text and questions must support multilingual display
+- Translations stored in `translations.json` or similar structure
+- Language selection via UI option
+
+### UI/UX
+- Clean and simple design for kids aged 7-8
+- Mobile-first responsive design
+- Large touch targets (minimum 44x44px)
+- Kid-friendly colors and animations
+- Clear visual feedback for all actions
+
+### Configuration
+- All game probabilities/configurable in `game_config.json`
+- Language translations in separate translation files
+- Configuration should be editable without code changes
+- Support for multiple difficulty levels/presets
+
+## Code Style Guidelines
+
+### Python
+- Follow PEP 8 style guide
+- Use type hints where appropriate
+- Write clear, readable code with comments
+- Use parameterized queries for database operations (prevent SQL injection)
+
+### JavaScript/Vue
+- Use Vue 3 Composition API when appropriate
+- Follow Vue.js style guide
+- Use ESLint for code quality
+- Keep components small and focused
+- Use meaningful variable and function names
+
+### General
+- Write self-documenting code
+- Add comments for complex logic
+- Keep functions focused on single responsibility
+- Use consistent naming conventions across the project
+
+## File Structure
+Follow the architecture outlined in the design document:
+- Backend: models/, routes/, services/, database/, config/
+- Frontend: components/, views/, services/, store/, utils/
+- Configuration files in config/ directory
+- Design documents in Game Design/ directory
+
+## Important Notes
+- Always validate user inputs on the backend
+- Prevent SQL injection and XSS attacks
+- Ensure mobile responsiveness for all UI components
+- Test on multiple browsers and devices
+- Keep performance in mind (lightweight rendering, efficient state management)
+- Questions should be age-appropriate (7-8 years old)
+- Support multiple question pools with management features
+
+## Testing Considerations
+- Test all game actions and probability calculations
+- Verify question system works correctly
+- Test language switching functionality
+- Verify mobile responsiveness
+- Test configuration loading and application
+
+## References
+- Game Design: `Game Design/gameDesign.txt`
+- Original Requirements: `Game Design/prompts.txt`
+

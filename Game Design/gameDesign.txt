@@ -1,0 +1,505 @@
+# Football Edu Game Design Document
+
+## 1. Game Overview
+
+### 1.1 Purpose
+An educational web-based football game designed for children aged 7-8 years old. The game combines educational questions with football gameplay mechanics to motivate kids to complete homework-related activities.
+
+### 1.2 Target Audience
+- Primary: Children aged 7-8 years old
+- Secondary: Parents/teachers who want to make learning engaging
+
+### 1.3 Platform
+- Web application (responsive design)
+- Mobile-first approach with touch-friendly interface
+- Cross-platform compatibility (iOS, Android, Desktop browsers)
+
+---
+
+## 2. Game Rules and Flow
+
+### 2.1 Team Composition
+- Each team consists of 5 players:
+  - 4 outfield players
+  - 1 goalkeeper
+- Player vs Computer opponent (5v5 mini soccer format)
+
+### 2.2 Game Actions
+
+#### 2.2.1 Player Actions
+1. **Pass**: Pass the ball to a teammate
+2. **Dribble**: Move past an opponent while maintaining ball control
+3. **Shoot**: Attempt to score a goal
+
+#### 2.2.2 Defensive Actions
+1. **Tackle**: Attempt to win the ball from an opponent
+
+### 2.3 Action Success Probabilities (Default)
+- **Pass**: 80% success rate (when question answered correctly)
+- **Dribble**: 60% success rate (when question answered correctly)
+- **Shot on Target**: 50% success rate (when question answered correctly)
+- **Goalkeeper Save**: 50% chance to block shots on target
+- **Tackle**: 75% success rate (when question answered correctly)
+
+**Note**: All percentages are configurable via configuration file.
+
+### 2.4 Educational Question System
+
+#### 2.4.1 Question Trigger
+- Every player action (Pass, Dribble, Shoot) triggers an educational question
+- Tackle attempts also trigger questions
+- Questions are multiple choice from predefined pools
+
+#### 2.4.2 Question Pools
+- Multiple question pools must be supported
+- Each pool can contain different subjects/topics
+- Questions should be age-appropriate (7-8 years old)
+- Question pools can be switched/configured
+
+#### 2.4.3 Question Flow
+1. Player selects an action
+2. Random question from selected pool is displayed
+3. Player answers the question
+4. If correct: Action proceeds with probability check
+5. If incorrect: Action fails, opponent gains possession
+
+### 2.5 Game Flow - Player Possession
+
+#### 2.5.1 Attacking Phase
+1. Player selects Pass, Dribble, or Shoot
+2. Educational question appears
+3. If question answered correctly:
+   - Probability check determines if action succeeds
+   - If Pass/Dribble succeeds: Ball moves forward
+   - If Pass/Dribble fails: Opponent gains possession
+   - If Shoot succeeds: Shot on target, goalkeeper chance to save
+   - If Shoot fails: Opponent gains possession
+4. If question answered incorrectly:
+   - Action fails immediately, opponent gains possession
+
+#### 2.5.2 Shooting Rules
+- Players can only shoot after clearing the defense
+- Defense is cleared by completing a series of successful passes and/or dribbles
+- Minimum number of successful actions required before shooting (configurable)
+
+#### 2.5.3 Goal Scoring
+- Shot must be on target (50% chance after correct answer)
+- Goalkeeper has 50% chance to save
+- If goalkeeper fails to save: GOAL!
+
+### 2.6 Game Flow - Opponent Possession
+
+#### 2.6.1 Opponent Actions
+- Computer randomly selects: Pass, Dribble, or Shoot
+- Opponent actions automatically succeed (no questions for AI)
+- Opponent follows same shooting rules (must clear defense first)
+
+#### 2.6.2 Player Defensive Opportunity
+- When opponent attempts Pass or Dribble:
+  - Player gets opportunity to tackle
+  - Tackle triggers educational question
+  - If question answered correctly: 75% chance to win the ball
+  - If question answered incorrectly: Tackle fails
+
+#### 2.6.3 Tackle Outcomes
+- **Successful Tackle**: Player gains possession, game continues
+- **Failed Tackle on Pass**: Ball continues to next opponent player
+- **Failed Tackle on Dribble**: Foul is called (penalty or free kick - configurable)
+
+### 2.7 Game States
+1. **Player Turn**: Player selects action, answers question
+2. **Action Resolution**: Probability check, visual feedback
+3. **Opponent Turn**: Computer selects action, player can attempt tackle
+4. **Ball Possession Change**: Transition between teams
+5. **Goal Celebration**: When a goal is scored
+6. **Game Over**: When match ends (time limit or score limit - configurable)
+
+### 2.8 Player Stance/Animation Rules
+
+#### 2.8.1 Active Action Stances
+- **Only one player** out of the 10 players (5 per team) can be in an active action stance at any given time
+- Active action stances are: **Passing**, **Shooting**, or **Dribbling**
+- The player with the ball or performing the action displays the corresponding stance
+
+#### 2.8.2 Default Stances
+- The other **9 players** must be in passive stances:
+  - **Standing**: Default idle stance for most players
+  - **Defending**: Defenders should use this stance
+- Players can occasionally transition to:
+  - **Tackling**: When attempting a defensive action
+  - **Celebration**: When a goal is scored (brief animation)
+
+#### 2.8.3 Stance Transitions
+- When a player performs an action (pass/dribble/shoot), they briefly show the action stance
+- After the action completes, the player returns to standing/defending stance
+- Only the player with ball possession shows active action stances
+- Other players remain in standing/defending poses unless:
+  - They attempt a tackle (tackling stance)
+  - A goal is scored (celebration stance for scoring team)
+
+---
+
+## 3. Technical Requirements
+
+### 3.1 Technology Stack
+
+#### 3.1.1 Backend
+- **Language**: Python 3.8+
+- **Database**: SQLite (Python sqlite3 module)
+- **Framework**: Flask or FastAPI (lightweight web framework)
+- **API**: RESTful API endpoints
+
+#### 3.1.2 Frontend
+- **Framework**: Vue.js 3.x (lightweight JavaScript framework)
+- **Build Tool**: Vite (for development and production builds)
+- **Styling**: CSS3 with mobile-responsive design
+- **State Management**: Vuex or Pinia (if needed)
+
+#### 3.1.3 Data Storage
+- **Questions**: SQLite database (questions, pools, answers)
+- **Game State**: In-memory or session-based (can be persisted if needed)
+- **Configuration**: JSON/YAML configuration files
+
+### 3.2 Architecture
+
+#### 3.2.1 Backend Structure
+```
+backend/
+├── app.py (main Flask/FastAPI application)
+├── models/
+│   ├── question.py (Question model)
+│   ├── question_pool.py (QuestionPool model)
+│   └── game_state.py (GameState model)
+├── routes/
+│   ├── api.py (API endpoints)
+│   └── game.py (Game logic endpoints)
+├── services/
+│   ├── question_service.py (Question management)
+│   ├── game_service.py (Game logic)
+│   └── config_service.py (Configuration management)
+├── database/
+│   ├── db.py (Database connection)
+│   └── schema.sql (Database schema)
+└── config/
+    ├── game_config.json (Game probabilities/config)
+    └── translations.json (Language translations)
+```
+
+#### 3.2.2 Frontend Structure
+```
+frontend/
+├── src/
+│   ├── main.js (Vue app entry point)
+│   ├── App.vue (Root component)
+│   ├── components/
+│   │   ├── GameField.vue (Football pitch visualization)
+│   │   ├── Player.vue (Player component)
+│   │   ├── Ball.vue (Ball component)
+│   │   ├── QuestionModal.vue (Question display)
+│   │   ├── ActionButtons.vue (Pass/Dribble/Shoot buttons)
+│   │   └── Scoreboard.vue (Score display)
+│   ├── views/
+│   │   ├── GameView.vue (Main game view)
+│   │   └── MenuView.vue (Main menu)
+│   ├── services/
+│   │   ├── api.js (API client)
+│   │   └── gameLogic.js (Client-side game logic)
+│   ├── store/ (State management)
+│   └── utils/
+│       ├── translations.js (Translation helper)
+│       └── config.js (Config loader)
+├── public/
+│   └── assets/ (Images, sprites - to be provided)
+└── package.json
+```
+
+### 3.3 API Endpoints
+
+#### 3.3.1 Question Endpoints
+- `GET /api/questions/pool/<pool_id>` - Get random question from pool
+- `GET /api/questions/pools` - List all question pools
+- `POST /api/questions/validate` - Validate answer
+
+#### 3.3.2 Game Endpoints
+- `POST /api/game/start` - Start new game
+- `POST /api/game/action` - Execute player action (pass/dribble/shoot)
+- `POST /api/game/tackle` - Attempt tackle
+- `GET /api/game/state` - Get current game state
+- `POST /api/game/opponent-action` - Process opponent action
+
+#### 3.3.3 Configuration Endpoints
+- `GET /api/config` - Get game configuration
+- `GET /api/translations/<language>` - Get translations for language
+
+---
+
+## 4. Data Models
+
+### 4.1 Question Model
+```python
+Question:
+  - id: integer (primary key)
+  - pool_id: integer (foreign key to QuestionPool)
+  - question_text: string (multilingual - JSON)
+  - options: JSON array (multiple choice options)
+  - correct_answer: integer (index of correct option)
+  - difficulty: string (optional)
+  - subject: string (optional)
+```
+
+### 4.2 QuestionPool Model
+```python
+QuestionPool:
+  - id: integer (primary key)
+  - name: string
+  - description: string (multilingual - JSON)
+  - active: boolean
+```
+
+### 4.3 GameState Model
+```python
+GameState:
+  - game_id: string (UUID)
+  - player_score: integer
+  - opponent_score: integer
+  - ball_possession: string ('player' | 'opponent')
+  - defense_cleared: boolean
+  - current_action: string (optional)
+  - timestamp: datetime
+```
+
+### 4.4 Configuration Structure
+```json
+{
+  "probabilities": {
+    "pass_success": 0.80,
+    "dribble_success": 0.60,
+    "shot_on_target": 0.50,
+    "goalkeeper_save": 0.50,
+    "tackle_success": 0.75
+  },
+  "game_rules": {
+    "actions_to_clear_defense": 3,
+    "match_duration_minutes": 5,
+    "max_score": null
+  },
+  "foul_penalty": "free_kick" // or "penalty"
+}
+```
+
+---
+
+## 5. UI/UX Requirements
+
+### 5.1 Design Principles
+- **Clean and Simple**: Minimal UI elements, large touch targets
+- **Kid-Friendly**: Bright colors, friendly animations, clear icons
+- **Mobile-First**: Touch-optimized, responsive layout
+- **Accessible**: Large text, high contrast, simple navigation
+
+### 5.2 Screen Layouts
+
+#### 5.2.1 Main Menu
+- Game title
+- Language selector (Greek/English/German)
+- Start Game button
+- Settings button (optional)
+
+#### 5.2.2 Game Screen
+- **Top Section**: Scoreboard (Player Score - Opponent Score)
+- **Center Section**: Football pitch (with players, ball)
+- **Bottom Section**: Action buttons (Pass, Dribble, Shoot)
+- **Question Overlay**: Modal that appears when action selected
+
+#### 5.2.3 Question Modal
+- Large, readable question text
+- 4 multiple choice buttons (large touch targets)
+- Visual feedback on selection
+- Submit/Confirm button
+
+### 5.3 Visual Feedback
+- Success animations (successful pass/dribble/shot)
+- Failure animations (failed action)
+- Ball movement animation
+- Player movement indicators
+- Goal celebration animation
+- Sound effects (optional, configurable)
+
+### 5.4 Responsive Design
+- Mobile: Single column, full-screen game field
+- Tablet: Optimized layout with larger action buttons
+- Desktop: Centered layout with side panels (if needed)
+
+---
+
+## 6. Internationalization (i18n)
+
+### 6.1 Supported Languages
+1. **English** (en)
+2. **Greek** (el)
+3. **German** (de)
+
+### 6.2 Translation Structure
+```json
+{
+  "en": {
+    "ui": {
+      "pass": "Pass",
+      "dribble": "Dribble",
+      "shoot": "Shoot",
+      "tackle": "Tackle",
+      "score": "Score",
+      "question": "Question"
+    },
+    "game": {
+      "action_success": "Great! Action successful!",
+      "action_failed": "Oh no! Action failed.",
+      "goal": "GOAL!"
+    }
+  },
+  "el": { ... },
+  "de": { ... }
+}
+```
+
+### 6.3 Language Selection
+- Language selector in main menu
+- Language preference stored in browser localStorage
+- All UI text and questions support multilingual display
+
+---
+
+## 7. Configuration System
+
+### 7.1 Configuration Files
+
+#### 7.1.1 Game Configuration (`game_config.json`)
+- All probability percentages
+- Game rules (defense clearing, match duration, etc.)
+- Difficulty levels (can have multiple difficulty presets)
+
+#### 7.1.2 Translation Files (`translations.json`)
+- All UI text in 3 languages
+- Structured by component/section
+
+### 7.2 Configuration Management
+- Configuration files should be editable without code changes
+- Backend loads configuration on startup
+- Frontend receives configuration via API
+- Configuration changes require game restart (or can be hot-reloaded)
+
+---
+
+## 8. Asset Requirements
+
+### 8.1 Required Assets (To be provided)
+- **Players**: 2D sprites for player team (4 outfield + 1 goalkeeper)
+- **Opponents**: 2D sprites for opponent team (4 outfield + 1 goalkeeper)
+- **Ball**: 2D ball sprite
+- **Pitch**: Football field background/background image
+- **UI Elements**: Buttons, icons, scoreboard elements
+
+### 8.2 Asset Specifications
+- Format: PNG with transparency (or SVG)
+- Resolution: High resolution for crisp display on all devices
+- Style: Kid-friendly, colorful, cartoon-like
+- Animation: Can be sprite sheets for animations (optional)
+
+---
+
+## 9. Game Progression & Scoring
+
+### 9.1 Scoring System
+- Each goal = 1 point
+- Match ends when:
+  - Time limit reached (configurable)
+  - Score limit reached (optional, configurable)
+  - Player quits
+
+### 9.2 Statistics (Optional)
+- Number of correct answers
+- Number of successful actions
+- Match history (can be stored locally)
+
+---
+
+## 10. Implementation Phases
+
+### Phase 1: Core Infrastructure
+- Backend API setup
+- Database schema and models
+- Basic frontend structure
+- Configuration system
+
+### Phase 2: Game Logic
+- Question system implementation
+- Game state management
+- Action probability system
+- Opponent AI logic
+
+### Phase 3: UI Implementation
+- Game field rendering
+- Player/ball visualization
+- Action buttons and question modal
+- Responsive design
+
+### Phase 4: Polish
+- Animations and visual feedback
+- Sound effects (optional)
+- Language translations
+- Testing and bug fixes
+
+---
+
+## 11. Technical Considerations
+
+### 11.1 Performance
+- Lightweight rendering (avoid heavy graphics libraries)
+- Efficient state management
+- Minimal API calls (batch when possible)
+- Client-side caching of questions/config
+
+### 11.2 Browser Compatibility
+- Modern browsers (Chrome, Firefox, Safari, Edge)
+- Mobile browsers (iOS Safari, Chrome Mobile)
+- Graceful degradation for older browsers
+
+### 11.3 Security
+- Input validation on backend
+- SQL injection prevention (use parameterized queries)
+- XSS prevention (sanitize user inputs)
+- CORS configuration for API
+
+### 11.4 Scalability
+- Database can handle multiple question pools
+- Question pool management interface (can be added later)
+- Support for adding new languages easily
+
+---
+
+## 12. Future Enhancements (Optional)
+
+- Multiplayer support (player vs player)
+- More question pools/subjects
+- Difficulty progression
+- Player statistics and achievements
+- Custom team colors/names
+- Tutorial mode for first-time players
+- Parent/teacher dashboard (question pool management)
+
+---
+
+## 13. Design References
+
+- Keep UI elements large and touch-friendly (minimum 44x44px)
+- Use high contrast colors for readability
+- Simple, intuitive icons for actions
+- Clear visual hierarchy (most important actions prominent)
+- Immediate feedback for all user actions
+
+---
+
+**Document Version**: 1.0
+**Last Updated**: Initial creation
+**Status**: Design Phase
+
