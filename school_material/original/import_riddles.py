@@ -7,8 +7,10 @@ import os
 import re
 import json
 
-# Add parent directory to path
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Add backend directory to path for database imports
+project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+backend_dir = os.path.join(project_root, 'backend')
+sys.path.insert(0, backend_dir)
 
 from database.db import get_db, init_database
 

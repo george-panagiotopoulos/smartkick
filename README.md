@@ -92,17 +92,21 @@ pip install -r requirements.txt
 ```
 
 5. Initialize the database:
-**The database is automatically initialized on first run!** When you start the Flask server, it will:
+**The database is automatically initialized on first run!** When you start the Flask server (via `start.sh`), it will:
 - Create the database file if it doesn't exist
 - Set up the database schema
-- Load all questions from `config/questions.json`
+- Load all original questions from `school_material/original/questions.json`
+- Import additional questions from `school_material/31Oct2025/questions_for_review.json`
 
 No manual setup required! 🎉
 
 If you need to reset the database manually:
 ```bash
+cd backend
+source venv/bin/activate
 python3 -c "from database.db import init_database; init_database()"
-python3 database/migrate_questions.py
+python3 ../school_material/original/migrate_questions.py
+python3 ../school_material/31Oct2025/scripts/import_questions.py
 ```
 
 6. Start the Flask server:

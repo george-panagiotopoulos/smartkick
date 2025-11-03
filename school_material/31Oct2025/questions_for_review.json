@@ -1,0 +1,433 @@
+{
+  "greek_2": [
+    {
+      "question": {
+        "en": "Which word is spelled correctly?",
+        "el": "Ποια λέξη είναι γραμμένη σωστά;",
+        "de": "Welches Wort ist richtig geschrieben?"
+      },
+      "answers": [
+        "τραγούδι",
+        "τραγούδη",
+        "τραγούδει",
+        "τραγούδοι"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "Complete the sentence: 'Εγώ _____ ένα ωραίο τραγούδι'",
+        "el": "Συμπλήρωσε την πρόταση: 'Εγώ _____ ένα ωραίο τραγούδι'",
+        "de": "Vervollständige den Satz: 'Εγώ _____ ένα ωραίο τραγούδι'"
+      },
+      "answers": [
+        "μαθαίνω",
+        "μαθαίνο",
+        "μαθαίνη",
+        "μαθαίνοι"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "Which ending is correct for: 'Εσύ τι _____ όταν βγήκε το δόντι σου;'",
+        "el": "Ποια κατάληξη είναι σωστή για: 'Εσύ τι _____ όταν βγήκε το δόντι σου;'",
+        "de": "Welche Endung ist richtig für: 'Εσύ τι _____ όταν βγήκε το δόντι σου;'"
+      },
+      "answers": [
+        "έκανες",
+        "έκανε",
+        "έκανα",
+        "έκανατε"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What does 'Ξαφνικά ξυπνώ' mean?",
+        "el": "Τι σημαίνει 'Ξαφνικά ξυπνώ';",
+        "de": "Was bedeutet 'Ξαφνικά ξυπνώ'?"
+      },
+      "answers": [
+        "Suddenly I wake up",
+        "Slowly I wake up",
+        "I go to sleep",
+        "I am sleeping"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "Which article is correct: '_____ δόντι'?",
+        "el": "Ποιο άρθρο είναι σωστό: '_____ δόντι';",
+        "de": "Welcher Artikel ist richtig: '_____ δόντι'?"
+      },
+      "answers": [
+        "το",
+        "τον",
+        "της",
+        "του"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is the correct form: '_____ Σελήνη'?",
+        "el": "Ποια είναι η σωστή μορφή: '_____ Σελήνη';",
+        "de": "Was ist die richtige Form: '_____ Σελήνη'?"
+      },
+      "answers": [
+        "στη",
+        "στο",
+        "στον",
+        "στην"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "In the sentence 'Ο Λουκάς...στη Σελήνη', what does 'Σελήνη' mean?",
+        "el": "Στην πρόταση 'Ο Λουκάς...στη Σελήνη', τι σημαίνει 'Σελήνη';",
+        "de": "Was bedeutet 'Σελήνη' im Satz 'Ο Λουκάς...στη Σελήνη'?"
+      },
+      "answers": [
+        "The Moon",
+        "The Sun",
+        "The Star",
+        "The Earth"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What does 'παξιμάδια' mean?",
+        "el": "Τι σημαίνει 'παξιμάδια';",
+        "de": "Was bedeutet 'παξιμάδια'?"
+      },
+      "answers": [
+        "rusks",
+        "candy",
+        "toys",
+        "books"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What does the phrase 'στο κρεβάτι μου' mean?",
+        "el": "Τι σημαίνει η φράση 'στο κρεβάτι μου';",
+        "de": "Was bedeutet die Phrase 'στο κρεβάτι μου'?"
+      },
+      "answers": [
+        "in my bed",
+        "in my room",
+        "in my house",
+        "in my garden"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is the correct spelling of the verb 'to learn' in Greek?",
+        "el": "Ποια είναι η σωστή ορθογραφία του ρήματος 'μαθαίνω';",
+        "de": "Wie ist die richtige Schreibweise des Verbs 'lernen' auf Griechisch?"
+      },
+      "answers": [
+        "μαθαίνω",
+        "μαθαίνο",
+        "μαθαίνη",
+        "μαθαίνοι"
+      ],
+      "correct_answer": 0
+    }
+  ],
+  "math_2": [
+    {
+      "question": {
+        "en": "What is 27 - 5?",
+        "el": "Πόσο κάνει 27 - 5;",
+        "de": "Was ist 27 - 5?"
+      },
+      "answers": [
+        "22",
+        "23",
+        "21",
+        "24"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is 77 - 5?",
+        "el": "Πόσο κάνει 77 - 5;",
+        "de": "Was ist 77 - 5?"
+      },
+      "answers": [
+        "72",
+        "73",
+        "71",
+        "74"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is 17 - 5?",
+        "el": "Πόσο κάνει 17 - 5;",
+        "de": "Was ist 17 - 5?"
+      },
+      "answers": [
+        "12",
+        "13",
+        "11",
+        "14"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is 8 - 5?",
+        "el": "Πόσο κάνει 8 - 5;",
+        "de": "Was ist 8 - 5?"
+      },
+      "answers": [
+        "3",
+        "4",
+        "2",
+        "5"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is 18 - 5?",
+        "el": "Πόσο κάνει 18 - 5;",
+        "de": "Was ist 18 - 5?"
+      },
+      "answers": [
+        "13",
+        "14",
+        "12",
+        "15"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is 6 + 3?",
+        "el": "Πόσο κάνει 6 + 3;",
+        "de": "Was ist 6 + 3?"
+      },
+      "answers": [
+        "9",
+        "8",
+        "10",
+        "7"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is 26 + 3?",
+        "el": "Πόσο κάνει 26 + 3;",
+        "de": "Was ist 26 + 3?"
+      },
+      "answers": [
+        "29",
+        "28",
+        "30",
+        "27"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is 77 + 2?",
+        "el": "Πόσο κάνει 77 + 2;",
+        "de": "Was ist 77 + 2?"
+      },
+      "answers": [
+        "79",
+        "78",
+        "80",
+        "76"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is 100 - 50?",
+        "el": "Πόσο κάνει 100 - 50;",
+        "de": "Was ist 100 - 50?"
+      },
+      "answers": [
+        "50",
+        "51",
+        "49",
+        "52"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is 50 + 50?",
+        "el": "Πόσο κάνει 50 + 50;",
+        "de": "Was ist 50 + 50?"
+      },
+      "answers": [
+        "100",
+        "99",
+        "101",
+        "98"
+      ],
+      "correct_answer": 0
+    }
+  ],
+  "german_2": [
+    {
+      "question": {
+        "en": "How do you say 'family' in German?",
+        "el": "Πώς λέγεται η 'οικογένεια' στα γερμανικά;",
+        "de": "Wie sagt man 'family' auf Deutsch?"
+      },
+      "answers": [
+        "die Familie",
+        "die Freunde",
+        "die Schule",
+        "das Haus"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is the German word for 'mother'?",
+        "el": "Ποια είναι η γερμανική λέξη για τη 'μαμά';",
+        "de": "Was ist das deutsche Wort für 'mother'?"
+      },
+      "answers": [
+        "die Mutter",
+        "der Vater",
+        "die Schwester",
+        "der Bruder"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "How do you say 'father' in German?",
+        "el": "Πώς λέγεται ο 'μπαμπάς' στα γερμανικά;",
+        "de": "Wie sagt man 'father' auf Deutsch?"
+      },
+      "answers": [
+        "der Vater",
+        "die Mutter",
+        "der Bruder",
+        "die Schwester"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What does 'die Schwester' mean?",
+        "el": "Τι σημαίνει 'die Schwester';",
+        "de": "Was bedeutet 'die Schwester'?"
+      },
+      "answers": [
+        "sister",
+        "brother",
+        "mother",
+        "father"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What does 'der Bruder' mean?",
+        "el": "Τι σημαίνει 'der Bruder';",
+        "de": "Was bedeutet 'der Bruder'?"
+      },
+      "answers": [
+        "brother",
+        "sister",
+        "mother",
+        "father"
+      ],
+      "correct_answer": 0
+    }
+  ],
+  "english_2": [
+    {
+      "question": {
+        "en": "What do children do on Halloween?",
+        "el": "Τι κάνουν τα παιδιά στο Halloween;",
+        "de": "Was machen Kinder an Halloween?"
+      },
+      "answers": [
+        "They dress up and go trick-or-treating",
+        "They go to school",
+        "They play football",
+        "They sleep"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What is a common Halloween decoration?",
+        "el": "Ποια είναι μια κοινή διακόσμηση για το Halloween;",
+        "de": "Was ist eine häufige Halloween-Dekoration?"
+      },
+      "answers": [
+        "Pumpkin",
+        "Flower",
+        "Tree",
+        "Car"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "When is Halloween celebrated?",
+        "el": "Πότε γιορτάζεται το Halloween;",
+        "de": "Wann wird Halloween gefeiert?"
+      },
+      "answers": [
+        "October 31st",
+        "December 25th",
+        "January 1st",
+        "April 1st"
+      ],
+      "correct_answer": 0
+    }
+  ],
+  "environment_1": [
+    {
+      "question": {
+        "en": "Which of these helps keep our environment clean?",
+        "el": "Ποιο από αυτά βοηθά να κρατήσουμε το περιβάλλον καθαρό;",
+        "de": "Was hilft, unsere Umwelt sauber zu halten?"
+      },
+      "answers": [
+        "Recycling",
+        "Throwing trash everywhere",
+        "Using more plastic",
+        "Wasting water"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": {
+        "en": "What do trees give us?",
+        "el": "Τι μας δίνουν τα δέντρα;",
+        "de": "Was geben uns Bäume?"
+      },
+      "answers": [
+        "Oxygen",
+        "Water",
+        "Food only",
+        "Nothing"
+      ],
+      "correct_answer": 0
+    }
+  ]
+}
+

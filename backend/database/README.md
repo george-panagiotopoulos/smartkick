@@ -34,35 +34,58 @@ from database.db import init_database
 init_database()
 ```
 
-Or run the migration script (which also loads questions from JSON):
+Or run the migration scripts from the school_material folders:
 
 ```bash
-python3 database/migrate_questions.py
+cd backend
+source venv/bin/activate
+# Original questions (clears database first)
+python3 ../school_material/original/migrate_questions.py
+# Additional questions from 31Oct2025 (adds without clearing)
+python3 ../school_material/31Oct2025/scripts/import_questions.py
 ```
 
 ## Migration from JSON
 
-The `migrate_questions.py` script loads questions from `config/questions.json` into the database:
+The migration scripts are now located in the `school_material/` folder:
+
+- **Original questions**: `school_material/original/migrate_questions.py`
+  - Loads questions from `school_material/original/questions.json`
+  - **Clears the database first** - use only for fresh installs
+  
+- **Additional questions**: `school_material/31Oct2025/scripts/import_questions.py`
+  - Loads questions from `school_material/31Oct2025/questions_for_review.json`
+  - **Adds questions without clearing** - safe for adding new questions
+
+### Running migrations manually
 
 ```bash
 cd backend
-python3 database/migrate_questions.py
+source venv/bin/activate
+python3 ../school_material/original/migrate_questions.py
+python3 ../school_material/31Oct2025/scripts/import_questions.py
 ```
-
-This script will:
-1. Initialize the database schema if it doesn't exist
-2. Load questions from JSON file
-3. Insert questions into the database
-4. Verify the migration
 
 ## Adding New Questions
 
-### Method 1: Add to JSON and Migrate
+### Method 1: Add to Existing Material Folder
 
-1. Add questions to `config/questions.json`
-2. Run migration script: `python3 database/migrate_questions.py`
+1. Add questions to a JSON file in the appropriate `school_material/` folder
+2. Run the import script for that folder (e.g., `school_material/31Oct2025/scripts/import_questions.py`)
 
-### Method 2: Direct Database Insert
+### Method 2: Create New Material Folder
+
+1. Create a new folder under `school_material/` (e.g., `school_material/2025-11-15/`)
+2. Create a questions JSON file and import script
+3. Update `start.sh` to run your new import script
+
+### Method 3: Add to Original Questions
+
+1. Add questions to `school_material/original/questions.json`
+2. Run: `python3 ../school_material/original/migrate_questions.py`
+   - **Warning**: This clears the database first!
+
+### Method 4: Direct Database Insert
 
 ```python
 from database.db import get_db

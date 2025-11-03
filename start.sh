@@ -82,9 +82,16 @@ if [ -f "backend/app.py" ] && [ -s "backend/app.py" ]; then
         fi
         
         # Load questions from JSON into database
-        if [ -f "database/migrate_questions.py" ] && [ -f "config/questions.json" ]; then
-            echo -e "${YELLOW}📚 Loading questions into database...${NC}"
-            python3 database/migrate_questions.py || echo -e "${YELLOW}⚠️  Warning: Question migration failed, continuing anyway...${NC}"
+        # First, run the original migration (clears and loads base questions)
+        if [ -f "../school_material/original/migrate_questions.py" ] && [ -f "../school_material/original/questions.json" ]; then
+            echo -e "${YELLOW}📚 Loading original questions into database...${NC}"
+            python3 ../school_material/original/migrate_questions.py || echo -e "${YELLOW}⚠️  Warning: Original question migration failed, continuing anyway...${NC}"
+        fi
+        
+        # Then, import additional questions from 31Oct2025 material (adds without clearing)
+        if [ -f "../school_material/31Oct2025/scripts/import_questions.py" ] && [ -f "../school_material/31Oct2025/questions_for_review.json" ]; then
+            echo -e "${YELLOW}📚 Importing 31Oct2025 questions into database...${NC}"
+            python3 ../school_material/31Oct2025/scripts/import_questions.py || echo -e "${YELLOW}⚠️  Warning: 31Oct2025 question import failed, continuing anyway...${NC}"
         fi
         
         # Check if Flask or FastAPI is configured

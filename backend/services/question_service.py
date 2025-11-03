@@ -107,9 +107,9 @@ class QuestionService:
         """
         Get question text in the requested language.
         
-        For language-specific categories (german_1, english_1, greek_1),
-        return the question in that language regardless of requested language.
-        For other categories (math, geography), return in requested language.
+        All categories respect the requested UI language. For language-learning
+        categories (german_*, english_*, greek_*), the question interface respects
+        the UI language while the vocabulary being tested is in the target language.
         
         Args:
             question_row: Database row with question data
@@ -119,20 +119,9 @@ class QuestionService:
         Returns:
             Question text string or None if not found
         """
-        # Check if this is a language-specific category
-        if category.startswith('german_'):
-            # For German language riddles, use German
-            return question_row.get('question_de') or question_row.get('question_en')
-        elif category.startswith('english_'):
-            # For English language riddles, use English
-            return question_row.get('question_en')
-        elif category.startswith('greek_'):
-            # For Greek language riddles, use Greek
-            return question_row.get('question_el') or question_row.get('question_en')
-        else:
-            # For math, geography, etc., use requested language
-            language_key = f'question_{language}'
-            return question_row.get(language_key) or question_row.get('question_en')
+        # Always try to return question in requested language, fallback to English
+        language_key = f'question_{language}'
+        return question_row.get(language_key) or question_row.get('question_en')
     
     def get_question_by_id(self, question_id: int, language: str = 'en') -> Optional[Dict]:
         """
