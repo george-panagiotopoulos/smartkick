@@ -197,6 +197,24 @@ const teams = [
     name: 'Netherlands',
     flag: '🇳🇱',
     colors: 'Orange shirt, Orange pants & socks'
+  },
+  {
+    id: 'croatia',
+    name: 'Croatia',
+    flag: '🇭🇷',
+    colors: 'Red shirt, White pants & socks'
+  },
+  {
+    id: 'australia',
+    name: 'Australia',
+    flag: '🇦🇺',
+    colors: 'Yellow shirt, Green pants & socks'
+  },
+  {
+    id: 'china',
+    name: 'China',
+    flag: '🇨🇳',
+    colors: 'Red shirt, Red pants & socks'
   }
 ]
 

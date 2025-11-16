@@ -289,6 +289,18 @@ def main():
         'netherlands': {
             'jersey': (255, 140, 0),      # Orange
             'socks': (255, 140, 0)         # Orange
+        },
+        'croatia': {
+            'jersey': (220, 20, 60),      # Red
+            'socks': (255, 255, 255)       # White
+        },
+        'australia': {
+            'jersey': (255, 215, 0),      # Yellow/Gold
+            'socks': (0, 156, 59)          # Green
+        },
+        'china': {
+            'jersey': (220, 20, 60),      # Red
+            'socks': (220, 20, 60)         # Red
         }
     }
     
