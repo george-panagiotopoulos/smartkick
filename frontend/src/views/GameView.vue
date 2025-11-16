@@ -1,16 +1,41 @@
 <template>
   <div class="game-view">
     <TeamSelection v-if="!teamSelectionComplete" />
-    
+
+    <!-- Tournament Bracket -->
+    <TournamentBracket
+      v-if="showBracket"
+      @close="showBracket = false"
+    />
+
+    <!-- Trophy Ceremony -->
+    <TrophyCeremony
+      v-if="tournamentStore.showTrophyCeremony"
+      @close="handleTrophyCeremonyClose"
+    />
+
     <template v-else>
       <div class="game-header">
         <div class="header-top">
           <h1>SmartKick</h1>
           <div class="controls">
+            <button
+              v-if="tournamentStore.isTournamentMode"
+              class="bracket-button"
+              @click="showBracket = true"
+            >
+              🏆 Bracket
+            </button>
             <LanguageToggle />
             <CategorySelector />
           </div>
         </div>
+
+        <!-- Tournament Round Info -->
+        <div v-if="tournamentStore.isTournamentMode" class="tournament-info">
+          <h2>{{ tournamentStore.roundName }}</h2>
+        </div>
+
         <div class="score">
           <span class="score-blue">
             <span class="team-flag">{{ playerTeamInfo.flag }}</span>
@@ -49,18 +74,24 @@
 </template>
 
 <script setup>
-import { computed, onMounted, watch } from 'vue'
+import { ref, computed, onMounted, watch } from 'vue'
 import { useGameStore } from '../store/gameStore'
 import { useLanguageStore } from '../store/languageStore'
+import { useTournamentStore } from '../store/tournamentStore'
 import GameField from '../components/GameField.vue'
 import ActionButtons from '../components/ActionButtons.vue'
 import LanguageToggle from '../components/LanguageToggle.vue'
 import CategorySelector from '../components/CategorySelector.vue'
 import TeamSelection from '../components/TeamSelection.vue'
 import GameOverModal from '../components/GameOverModal.vue'
+import TournamentBracket from '../components/TournamentBracket.vue'
+import TrophyCeremony from '../components/TrophyCeremony.vue'
 
 const gameStore = useGameStore()
 const languageStore = useLanguageStore()
+const tournamentStore = useTournamentStore()
+
+const showBracket = ref(false)
 
 // Watch for opponent possession and trigger opponent actions
 watch(() => gameStore.ballPossession, (newVal) => {
@@ -116,6 +147,65 @@ const translatedGameMessage = computed(() => {
   return msg
 })
 
+// Watch for game over to handle tournament progression
+watch(() => gameStore.isGameOver, (gameOver) => {
+  if (gameOver && tournamentStore.isTournamentMode) {
+    handleTournamentMatchEnd()
+  }
+})
+
+function handleTournamentMatchEnd() {
+  // Determine winner based on final score
+  const playerScore = gameStore.blueScore
+  const opponentScore = gameStore.redScore
+  const winner = playerScore > opponentScore ? tournamentStore.playerTeamId : tournamentStore.currentOpponent
+
+  // Record match result
+  tournamentStore.recordPlayerMatchResult(winner, playerScore, opponentScore)
+
+  // Check if round is complete
+  if (tournamentStore.isRoundComplete()) {
+    // Advance to next round
+    tournamentStore.advanceToNextRound()
+
+    // Check if player is still in tournament
+    if (tournamentStore.isPlayerInTournament()) {
+      // Player advanced - prepare next match
+      setTimeout(() => {
+        // Show bracket before next match
+        showBracket.value = true
+
+        // After closing bracket, start next match
+        setTimeout(() => {
+          const opponent = tournamentStore.currentOpponent
+          gameStore.setTeams(tournamentStore.playerTeamId, opponent)
+          gameStore.resetGame()
+          gameStore.setTeamSelectionComplete(true)
+          gameStore.initializeGame()
+
+          // Simulate other matches in new round
+          tournamentStore.simulateRoundMatches()
+        }, 3000)
+      }, 3000)
+    } else if (tournamentStore.tournamentWinner === tournamentStore.playerTeamId) {
+      // Player won tournament - show trophy ceremony
+      setTimeout(() => {
+        tournamentStore.showTrophyCeremony = true
+      }, 3000)
+    } else {
+      // Player eliminated - tournament over
+      setTimeout(() => {
+        showBracket.value = true
+      }, 3000)
+    }
+  }
+}
+
+function handleTrophyCeremonyClose() {
+  tournamentStore.showTrophyCeremony = false
+  showBracket.value = true
+}
+
 onMounted(() => {
   // Only initialize game after team selection is complete
   watch(() => gameStore.teamSelectionComplete, (complete) => {
@@ -157,6 +247,40 @@ onMounted(() => {
   display: flex;
   align-items: center;
   gap: 12px;
+}
+
+.bracket-button {
+  background: #FFD700;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(255, 215, 0, 0.4);
+}
+
+.bracket-button:hover {
+  background: #FFC700;
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.6);
+}
+
+.tournament-info {
+  margin: 15px 0;
+  padding: 15px;
+  background: rgba(255, 215, 0, 0.2);
+  border-radius: 10px;
+  border: 2px solid #FFD700;
+}
+
+.tournament-info h2 {
+  margin: 0;
+  color: white;
+  font-size: 1.5em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .game-header h1 {

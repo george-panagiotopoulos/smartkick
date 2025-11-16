@@ -32,7 +32,15 @@
       </div>
       
       <div class="game-over-footer">
-        <button class="new-game-button" @click="startNewGame">
+        <div v-if="tournamentStore.isTournamentMode" class="tournament-message">
+          <p v-if="winner === 'player' && tournamentStore.getCurrentPlayerMatch()">
+            🎉 {{ languageStore.t('ui.you_advance', 'You advance to the next round!') }}
+          </p>
+          <p v-else-if="winner === 'opponent'">
+            😞 {{ languageStore.t('ui.tournament_eliminated', 'You have been eliminated from the tournament.') }}
+          </p>
+        </div>
+        <button v-if="!tournamentStore.isTournamentMode" class="new-game-button" @click="startNewGame">
           {{ languageStore.t('ui.new_game', 'New Game') }}
         </button>
       </div>
@@ -44,6 +52,7 @@
 import { computed } from 'vue'
 import { useGameStore } from '../store/gameStore'
 import { useLanguageStore } from '../store/languageStore'
+import { useTournamentStore } from '../store/tournamentStore'
 
 const props = defineProps({
   show: {
@@ -54,6 +63,7 @@ const props = defineProps({
 
 const gameStore = useGameStore()
 const languageStore = useLanguageStore()
+const tournamentStore = useTournamentStore()
 
 const blueScore = computed(() => gameStore.blueScore)
 const redScore = computed(() => gameStore.redScore)
@@ -85,6 +95,10 @@ function handleOverlayClick() {
 }
 
 function startNewGame() {
+  // Reset tournament if in tournament mode
+  if (tournamentStore.isTournamentMode) {
+    tournamentStore.resetTournament()
+  }
   // Use the reset function from the game store
   gameStore.resetGame()
 }
@@ -266,6 +280,21 @@ function startNewGame() {
 
 .game-over-footer {
   margin-top: 30px;
+}
+
+.tournament-message {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.tournament-message p {
+  color: white;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin: 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .new-game-button {

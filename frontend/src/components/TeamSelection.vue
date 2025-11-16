@@ -2,8 +2,25 @@
   <div class="team-selection-overlay">
     <div class="team-selection-container">
       <h1 class="selection-title">⚽ {{ languageStore.t('ui.select_teams', 'Select Teams') }}</h1>
-      
-      <div class="teams-section">
+
+      <!-- Game Mode Selection -->
+      <div class="game-mode-selector">
+        <button
+          :class="['mode-button', { active: gameMode === 'single' }]"
+          @click="gameMode = 'single'"
+        >
+          ⚽ Single Match
+        </button>
+        <button
+          :class="['mode-button', { active: gameMode === 'tournament' }]"
+          @click="gameMode = 'tournament'"
+        >
+          🏆 Tournament (8 Teams)
+        </button>
+      </div>
+
+      <!-- Single Match Mode -->
+      <div v-if="gameMode === 'single'" class="teams-section">
         <div class="team-selector">
           <h2>{{ languageStore.t('ui.your_team', 'Your Team') }}</h2>
           <div class="teams-grid">
@@ -41,6 +58,24 @@
         </div>
       </div>
 
+      <!-- Tournament Mode -->
+      <div v-else class="tournament-selection">
+        <h2>{{ languageStore.t('ui.select_your_team', 'Select Your Team') }}</h2>
+        <p class="tournament-desc">Choose your team. 7 random opponents will be selected automatically.</p>
+        <div class="teams-grid">
+          <div
+            v-for="team in teams"
+            :key="team.id"
+            :class="['team-card', { selected: selectedPlayerTeam === team.id }]"
+            @click="selectPlayerTeam(team.id)"
+          >
+            <div class="team-flag">{{ team.flag }}</div>
+            <div class="team-name">{{ team.name }}</div>
+            <div class="team-colors">{{ team.colors }}</div>
+          </div>
+        </div>
+      </div>
+
       <div class="selection-actions">
         <button
           class="settings-button"
@@ -53,7 +88,7 @@
           :disabled="!canStart"
           @click="startGame"
         >
-          {{ languageStore.t('ui.start_game', 'Start Game') }}
+          {{ gameMode === 'tournament' ? '🏆 Start Tournament' : languageStore.t('ui.start_game', 'Start Game') }}
         </button>
       </div>
       
@@ -99,9 +134,13 @@
 import { ref, computed, onMounted } from 'vue'
 import { useGameStore } from '../store/gameStore'
 import { useLanguageStore } from '../store/languageStore'
+import { useTournamentStore } from '../store/tournamentStore'
 
 const gameStore = useGameStore()
 const languageStore = useLanguageStore()
+const tournamentStore = useTournamentStore()
+
+const gameMode = ref('single') // 'single' or 'tournament'
 
 const showSettings = ref(false)
 const selectedDuration = ref('regular')
@@ -222,7 +261,10 @@ const selectedPlayerTeam = ref(null)
 const selectedOpponentTeam = ref(null)
 
 const canStart = computed(() => {
-  return selectedPlayerTeam.value !== null && 
+  if (gameMode.value === 'tournament') {
+    return selectedPlayerTeam.value !== null
+  }
+  return selectedPlayerTeam.value !== null &&
          selectedOpponentTeam.value !== null &&
          selectedPlayerTeam.value !== selectedOpponentTeam.value
 })
@@ -239,10 +281,25 @@ function selectOpponentTeam(teamId) {
 
 function startGame() {
   if (!canStart.value) return
-  
-  gameStore.setTeams(selectedPlayerTeam.value, selectedOpponentTeam.value)
-  gameStore.setGameDuration(selectedDuration.value) // Set duration before starting
-  gameStore.setTeamSelectionComplete(true)
+
+  if (gameMode.value === 'tournament') {
+    // Initialize tournament mode
+    tournamentStore.initializeTournament(selectedPlayerTeam.value)
+
+    // Set opponent from tournament
+    const opponent = tournamentStore.currentOpponent
+    gameStore.setTeams(selectedPlayerTeam.value, opponent)
+    gameStore.setGameDuration(selectedDuration.value)
+    gameStore.setTeamSelectionComplete(true)
+
+    // Simulate other matches
+    tournamentStore.simulateRoundMatches()
+  } else {
+    // Single match mode
+    gameStore.setTeams(selectedPlayerTeam.value, selectedOpponentTeam.value)
+    gameStore.setGameDuration(selectedDuration.value)
+    gameStore.setTeamSelectionComplete(true)
+  }
 }
 </script>
 
@@ -276,8 +333,56 @@ function startGame() {
 .selection-title {
   text-align: center;
   color: #333;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   font-size: 2.5em;
+}
+
+.game-mode-selector {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.mode-button {
+  background: #f5f5f5;
+  border: 3px solid #ddd;
+  padding: 15px 30px;
+  font-size: 1.1em;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #333;
+}
+
+.mode-button:hover {
+  background: #e8f5e9;
+  border-color: #4CAF50;
+  transform: translateY(-2px);
+}
+
+.mode-button.active {
+  background: #4CAF50;
+  color: white;
+  border-color: #4CAF50;
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+}
+
+.tournament-selection {
+  text-align: center;
+}
+
+.tournament-selection h2 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 1.8em;
+}
+
+.tournament-desc {
+  color: #666;
+  font-size: 1.1em;
+  margin-bottom: 20px;
 }
 
 .teams-section {
