@@ -23,7 +23,15 @@
       "attacker": "Attacker",
       "select_teams": "Select Teams",
       "your_team": "Your Team",
-      "opponent_team": "Opponent Team"
+      "opponent_team": "Opponent Team",
+      "new_game": "New Game",
+      "game_over": "Game Over!",
+      "you_won": "You Won! 🏆",
+      "opponent_won": "Opponent Won! 🏆",
+      "draw": "It's a Draw!",
+      "you_advance": "You advance to the next round!",
+      "tournament_eliminated": "Your team has been eliminated from the tournament.",
+      "return_main_menu": "Return to Main Menu"
     },
     "game": {
       "action_success": "Great! Action successful!",
@@ -66,7 +74,15 @@
       "attacker": "Επιθετικός",
       "select_teams": "Επιλογή Ομάδων",
       "your_team": "Η Ομάδα σου",
-      "opponent_team": "Ομάδα Αντιπάλου"
+      "opponent_team": "Ομάδα Αντιπάλου",
+      "new_game": "Νέο Παιχνίδι",
+      "game_over": "Τέλος Παιχνιδιού!",
+      "you_won": "Κέρδισες! 🏆",
+      "opponent_won": "Ο Αντίπαλος Κέρδισε! 🏆",
+      "draw": "Ισοπαλία!",
+      "you_advance": "Προκρίνεσαι στον επόμενο γύρο!",
+      "tournament_eliminated": "Η ομάδα σου αποκλείστηκε από το τουρνουά.",
+      "return_main_menu": "Επιστροφή στο Κεντρικό Μενού"
     },
     "game": {
       "action_success": "Τέλεια! Η ενέργεια ήταν επιτυχής!",
@@ -109,7 +125,15 @@
       "attacker": "Stürmer",
       "select_teams": "Teams auswählen",
       "your_team": "Dein Team",
-      "opponent_team": "Gegner Team"
+      "opponent_team": "Gegner Team",
+      "new_game": "Neues Spiel",
+      "game_over": "Spiel vorbei!",
+      "you_won": "Du hast gewonnen! 🏆",
+      "opponent_won": "Gegner hat gewonnen! 🏆",
+      "draw": "Unentschieden!",
+      "you_advance": "Du kommst in die nächste Runde!",
+      "tournament_eliminated": "Dein Team wurde vom Turnier ausgeschlossen.",
+      "return_main_menu": "Zurück zum Hauptmenü"
     },
     "game": {
       "action_success": "Großartig! Aktion erfolgreich!",

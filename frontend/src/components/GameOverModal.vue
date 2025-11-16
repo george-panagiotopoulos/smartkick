@@ -33,13 +33,24 @@
       
       <div class="game-over-footer">
         <div v-if="tournamentStore.isTournamentMode" class="tournament-message">
-          <p v-if="winner === 'player' && tournamentStore.getCurrentPlayerMatch()">
+          <p v-if="winner === 'player' || winner === 'draw'">
             🎉 {{ languageStore.t('ui.you_advance', 'You advance to the next round!') }}
           </p>
-          <p v-else-if="winner === 'opponent'">
-            😞 {{ languageStore.t('ui.tournament_eliminated', 'You have been eliminated from the tournament.') }}
+          <p v-else-if="winner === 'opponent'" class="elimination-message">
+            😞 {{ languageStore.t('ui.tournament_eliminated', 'Your team has been eliminated from the tournament.') }}
           </p>
         </div>
+
+        <!-- Show button in tournament mode only when eliminated -->
+        <button
+          v-if="tournamentStore.isTournamentMode && winner === 'opponent'"
+          class="new-game-button"
+          @click="startNewGame"
+        >
+          {{ languageStore.t('ui.return_main_menu', 'Return to Main Menu') }}
+        </button>
+
+        <!-- Show button in single match mode -->
         <button v-if="!tournamentStore.isTournamentMode" class="new-game-button" @click="startNewGame">
           {{ languageStore.t('ui.new_game', 'New Game') }}
         </button>
@@ -295,6 +306,11 @@ function startNewGame() {
   font-weight: bold;
   margin: 0;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.elimination-message {
+  color: #ff6b6b !important;
+  font-size: 1.5em !important;
 }
 
 .new-game-button {

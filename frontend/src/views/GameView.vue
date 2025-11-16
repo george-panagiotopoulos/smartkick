@@ -158,12 +158,26 @@ function handleTournamentMatchEnd() {
   // Determine winner based on final score
   const playerScore = gameStore.blueScore
   const opponentScore = gameStore.redScore
-  const winner = playerScore > opponentScore ? tournamentStore.playerTeamId : tournamentStore.currentOpponent
+
+  // Handle draws - player advances in case of draw
+  let winner
+  if (playerScore >= opponentScore) {
+    winner = tournamentStore.playerTeamId
+  } else {
+    winner = tournamentStore.currentOpponent
+  }
 
   // Record match result
   tournamentStore.recordPlayerMatchResult(winner, playerScore, opponentScore)
 
-  // Check if round is complete
+  // Check if player lost
+  if (winner !== tournamentStore.playerTeamId) {
+    // Player eliminated - GameOverModal will show elimination message
+    // Don't advance tournament, just wait for user to click "New Game"
+    return
+  }
+
+  // Player won/drew - check if round is complete
   if (tournamentStore.isRoundComplete()) {
     // Advance to next round
     tournamentStore.advanceToNextRound()
@@ -191,11 +205,6 @@ function handleTournamentMatchEnd() {
       // Player won tournament - show trophy ceremony
       setTimeout(() => {
         tournamentStore.showTrophyCeremony = true
-      }, 3000)
-    } else {
-      // Player eliminated - tournament over
-      setTimeout(() => {
-        showBracket.value = true
       }, 3000)
     }
   }
