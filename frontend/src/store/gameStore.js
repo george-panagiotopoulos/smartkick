@@ -303,34 +303,63 @@ export const useGameStore = defineStore('game', () => {
   function getShootProbability() {
     // Get base shoot probability from config (default 0.50)
     // Position affects shot on target probability:
-    // - From distance (position 5, 8, 9, 10): 30% chance shot is on target (reduced from base)
-    // - Past defender (position 7, 2): use base probability (50% default)
+    // - From distance (position 5, 8, 9, 10): 40% chance shot is on target (increased from 30%)
+    // - Past defender (position 7, 2): 70% chance shot is on target (increased from 50%)
     const team = currentTeam.value
     const currentFieldPos = team[ballPosition.value.player].fieldPosition
-    
+
     // Get current shoot probability (may be adjusted by question results)
     const baseShootProb = probabilities.value.shoot || 0.50
-    
+
     if (ballPossession.value === 'blue') {
       if (currentFieldPos === 7) {
-        // Past defender - use base probability
-        return baseShootProb
+        // Past defender - increased to 70%
+        return 0.70
       } else if (currentFieldPos === 5 || currentFieldPos === 8 || currentFieldPos === 9) {
-        // From distance - reduce to 30% (fixed at 30% regardless of base)
-        return 0.30
+        // From distance - increased to 40%
+        return 0.40
       }
     } else {
       if (currentFieldPos === 2) {
-        // Past defender - use base probability
-        return baseShootProb
+        // Past defender - increased to 70%
+        return 0.70
       } else if (currentFieldPos === 10) {
-        // From distance - reduce to 30%
-        return 0.30
+        // From distance - increased to 40%
+        return 0.40
       }
     }
-    
+
     // Default: distance shot
-    return 0.30
+    return 0.40
+  }
+
+  function getGoalkeeperSaveProbability() {
+    // Goalkeeper save probability based on shot position:
+    // - From distance (position 5, 8, 9, 10): 40% chance to save (decreased from 50%)
+    // - From nearby/past defender (position 7, 2): 14.3% chance to save (adjusted for 60% overall goal chance)
+    const team = currentTeam.value
+    const currentFieldPos = team[ballPosition.value.player].fieldPosition
+
+    if (ballPossession.value === 'blue') {
+      if (currentFieldPos === 7) {
+        // Past defender - goalkeeper has 14.3% save chance (70% on target × 85.7% not saved = 60% goal)
+        return 0.143
+      } else if (currentFieldPos === 5 || currentFieldPos === 8 || currentFieldPos === 9) {
+        // From distance - goalkeeper has 40% save chance
+        return 0.40
+      }
+    } else {
+      if (currentFieldPos === 2) {
+        // Past defender - goalkeeper has 14.3% save chance
+        return 0.143
+      } else if (currentFieldPos === 10) {
+        // From distance - goalkeeper has 40% save chance
+        return 0.40
+      }
+    }
+
+    // Default: distance shot
+    return 0.40
   }
   
   function executePass(success) {
@@ -660,8 +689,9 @@ export const useGameStore = defineStore('game', () => {
       return
     }
     
-    // Shot on target - check goalkeeper save (50% chance to save)
-    const goalkeeperSave = Math.random() < 0.50
+    // Shot on target - check goalkeeper save (probability depends on position)
+    const goalkeeperSaveProb = getGoalkeeperSaveProbability()
+    const goalkeeperSave = Math.random() < goalkeeperSaveProb
     
     if (goalkeeperSave) {
       // Goalkeeper saved - switch to blocking stance
@@ -1001,7 +1031,8 @@ export const useGameStore = defineStore('game', () => {
       }
       
       // Shot on target
-      const goalkeeperSave = Math.random() < 0.50
+      const goalkeeperSaveProb = getGoalkeeperSaveProbability()
+      const goalkeeperSave = Math.random() < goalkeeperSaveProb
       if (goalkeeperSave) {
         const blueGK = bluePlayers.value.gk
         blueGK.stance = 'blocking'
@@ -1207,7 +1238,8 @@ export const useGameStore = defineStore('game', () => {
         }
         
         // Shot on target
-        const goalkeeperSave = Math.random() < 0.50
+        const goalkeeperSaveProb = getGoalkeeperSaveProbability()
+        const goalkeeperSave = Math.random() < goalkeeperSaveProb
         if (goalkeeperSave) {
           const blueGK = bluePlayers.value.gk
           blueGK.stance = 'blocking'
@@ -1650,7 +1682,10 @@ export const useGameStore = defineStore('game', () => {
     italy: { name: 'Italy', flag: '🇮🇹' },
     argentina: { name: 'Argentina', flag: '🇦🇷' },
     france: { name: 'France', flag: '🇫🇷' },
-    netherlands: { name: 'Netherlands', flag: '🇳🇱' }
+    netherlands: { name: 'Netherlands', flag: '🇳🇱' },
+    croatia: { name: 'Croatia', flag: '🇭🇷' },
+    australia: { name: 'Australia', flag: '🇦🇺' },
+    china: { name: 'China', flag: '🇨🇳' }
   }
   
   function getTeamInfo(teamId) {
@@ -1710,6 +1745,7 @@ export const useGameStore = defineStore('game', () => {
     executeOpponentAction,
     executeTackle,
     getShootProbability,
+    getGoalkeeperSaveProbability,
     findPlayerByFieldPosition,
     checkShootAvailability,
     setTeams,
